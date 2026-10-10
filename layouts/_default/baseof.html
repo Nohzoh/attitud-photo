@@ -5,8 +5,11 @@
     <a class="skip-link" href="#contenu">Passer au contenu</a>
     <header class="site-header">
       <a class="brand" href="{{ "" | relURL }}">
-        <span class="brand-name">{{ site.Title }}</span>
-        <span class="brand-signature">{{ site.Params.author }}</span>
+        <img class="brand-logo" src="{{ "logo.png" | relURL }}" width="40" height="55" alt="">
+        <span class="brand-text">
+          <span class="brand-name">{{ site.Title }}</span>
+          <span class="brand-signature">{{ site.Params.author }}</span>
+        </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav class="site-nav" id="menu" aria-label="Navigation principale">

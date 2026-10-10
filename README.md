@@ -37,7 +37,7 @@ Depuis le site de GitHub : ouvrir le dossier de la rubrique, puis « Add file �
 
 Exporter en JPEG, **2 400 pixels sur le côté le plus long**, qualité 85 (environ 400 à 700 Ko par photo). Hugo fabrique lui-même les versions plus petites (WebP 800, 1 600 et 2 400 px) : ne jamais déposer de fichiers RAW ni d'originaux pleine définition, le dépôt grossirait inutilement.
 
-Les fichiers `exemple-*.jpg` sont des images provisoires, à supprimer au fur et à mesure que les vraies photos arrivent.
+Les photos actuelles ont été reprises de l'ancien site Google Sites (2 048 px au plus) ; les remplacer par les exports originaux en 2 400 px quand ils sont disponibles.
 
 ## Travailler en local
 
