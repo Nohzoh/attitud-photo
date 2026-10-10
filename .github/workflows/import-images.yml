@@ -1,0 +1,26 @@
+# Workflow ponctuel : télécharge les images de l'ancien site Google Sites et les
+# ajoute à la branche qui l'a déclenché. À supprimer une fois l'import terminé.
+name: Import des images Google Sites
+
+on:
+  push:
+    branches: [claude/import-images]
+    paths: [scripts/import_google_sites.py, .github/workflows/import-images.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Télécharger les images
+        run: python3 scripts/import_google_sites.py import
+      - name: Ajouter les images à la branche
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add import
+          git commit -m "Import des images de Google Sites"
+          git push
