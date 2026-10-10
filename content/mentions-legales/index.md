@@ -21,7 +21,7 @@ Le site est hébergé par GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly
 
 ## Propriété intellectuelle
 
-Les photographies, textes et contenus de ce site sont protégés par le droit d'auteur. Toute reproduction, diffusion ou utilisation sans autorisation écrite est interdite.
+Les photographies, textes et contenus de ce site sont protégés par le droit d'auteur. Toute reproduction, diffusion ou utilisation sans autorisation écrite est interdite. Les conditions détaillées figurent sur la page [Droits d'utilisation](../droits-utilisation/).
 
 ## Droit à l'image
 

@@ -50,3 +50,7 @@ Puis ouvrir http://localhost:1313. La première construction est lente (traiteme
 ## Anciennes adresses
 
 Les adresses de l'ancien site Google Sites (`/portraits-souvenirs`, `/leyla`, `/cléo-bataille`…) sont déclarées dans le champ `aliases` des pages concernées et redirigent vers les nouvelles.
+
+## Droits
+
+Les photographies et textes sont la propriété de Calamithi, tous droits réservés ; le code du site est sous licence MIT. Voir [LICENSE.md](LICENSE.md).

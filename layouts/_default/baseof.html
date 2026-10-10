@@ -50,7 +50,7 @@
           </ul>
         </div>
       </div>
-      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}</p>
+      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés. Les photographies de ce site sont protégées par le droit d'auteur : toute copie ou réutilisation sans autorisation écrite est interdite.{{ with site.GetPage "/droits-utilisation" }} · <a href="{{ .RelPermalink }}">Droits d'utilisation</a>{{ end }}{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}</p>
     </footer>
 
     <dialog class="lightbox" data-lightbox aria-label="Visionneuse">
