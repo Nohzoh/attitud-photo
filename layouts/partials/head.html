@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := site.Title }}
+{{ if not .IsHome }}{{ $title = printf "%s · %s" (.Params.titre_seo | default .Title) site.Title }}{{ end }}
+{{ $description := .Description | default site.Params.description }}
+{{ $share := partial "cover.html" . }}
+{{ if and (not $share) .IsHome }}{{ with site.GetPage "/selection" }}{{ $share = partial "cover.html" . }}{{ end }}{{ end }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ site.Params.author }}">
+{{ with resources.Get "css/styles.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with $share }}
+  {{ $og := (. | images.Filter images.AutoOrient).Fill "1200x630 Center jpg q80" }}
+  <meta property="og:image" content="{{ $og.Permalink }}">
+  <meta property="og:image:width" content="{{ $og.Width }}">
+  <meta property="og:image:height" content="{{ $og.Height }}">
+  <meta name="twitter:card" content="summary_large_image">
+{{ end }}
+<meta name="theme-color" content="{{ site.Params.themeColor }}">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+{{ if .IsHome }}{{ partial "jsonld.html" . }}{{ end }}

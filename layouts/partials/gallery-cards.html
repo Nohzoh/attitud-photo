@@ -1,0 +1,18 @@
+{{/* Cartes vers les galeries (pages filles) d'une rubrique. */}}
+{{ with .Pages }}
+<section class="section-block">
+  <h2>Galeries</h2>
+  <div class="cards">
+    {{ range . }}
+      <a class="card" href="{{ .RelPermalink }}">
+        {{ with partial "cover.html" . }}
+          {{ $thumb := (. | images.Filter images.AutoOrient).Fill "900x1125 Center webp" }}
+          <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy" decoding="async">
+        {{ end }}
+        <span class="card-title">{{ .Title }}</span>
+        {{ with .Params.sous_titre }}<span class="card-text">{{ . }}</span>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+  <head>{{ partial "head.html" . }}</head>
+  <body class="{{ if .IsHome }}home{{ else }}section-{{ .Section | default "page" }}{{ end }}">
+    <a class="skip-link" href="#contenu">Passer au contenu</a>
+    <header class="site-header">
+      <a class="brand" href="{{ "" | relURL }}">
+        <span class="brand-name">{{ site.Title }}</span>
+        <span class="brand-signature">{{ site.Params.author }}</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav class="site-nav" id="menu" aria-label="Navigation principale">
+        {{ $current := . }}
+        {{ range site.Menus.main }}
+          {{ $active := false }}
+          {{ with .Page }}{{ if or (eq $current .) (and .IsSection ($current.IsDescendant .)) }}{{ $active = true }}{{ end }}{{ end }}
+          <a href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{ end }}
+      </nav>
+    </header>
+
+    <main id="contenu" tabindex="-1">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">{{ site.Title }}</p>
+          <p class="footer-muted">{{ site.Params.tagline }}<br>{{ site.Params.author }}, photographe &amp; artiste</p>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          {{ with site.Params.contact }}
+          <ul>
+            <li><a href="mailto:{{ .email }}">{{ .email }}</a></li>
+            <li><a href="tel:{{ .phone_intl }}">{{ .phone }}</a></li>
+            <li class="footer-muted">{{ .area }}</li>
+          </ul>
+          {{ end }}
+        </div>
+        <div>
+          <p class="footer-heading">Suivre</p>
+          <ul>
+            {{ range site.Params.contact.socials }}<li><a href="{{ .url }}" rel="noopener">{{ .name }}</a></li>{{ end }}
+            <li><a href="{{ site.Params.livret_url }}">Livret d'exposition</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}</p>
+    </footer>
+
+    <dialog class="lightbox" data-lightbox aria-label="Visionneuse">
+      <img alt="">
+      <p class="lightbox-count" aria-live="polite"></p>
+      <button type="button" class="lightbox-close" data-close aria-label="Fermer">×</button>
+      <button type="button" class="lightbox-prev" data-prev aria-label="Photo précédente">‹</button>
+      <button type="button" class="lightbox-next" data-next aria-label="Photo suivante">›</button>
+    </dialog>
+    {{ with resources.Get "js/site.js" | minify | fingerprint }}<script src="{{ .RelPermalink }}" defer></script>{{ end }}
+  </body>
+</html>

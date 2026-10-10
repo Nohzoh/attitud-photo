@@ -1,0 +1,21 @@
+{{/* Formules et tarifs, décrits dans le front matter « offres » de la rubrique. */}}
+{{ with .Params.offres }}
+<section class="section-block">
+  <h2>{{ $.Params.offres_titre | default "Formules" }}</h2>
+  <div class="offers">
+    {{ range . }}
+      <article class="offer">
+        <h3>{{ .titre }}</h3>
+        <p class="offer-price">{{ .prix }}</p>
+        {{ with .duree }}<p class="offer-duration">{{ . }}</p>{{ end }}
+        {{ with .description }}<p>{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+  {{ with $.Params.inclus }}
+    <ul class="included">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  {{ end }}
+</section>
+{{ end }}
