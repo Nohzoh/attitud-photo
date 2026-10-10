@@ -13,15 +13,17 @@ manifest = json.loads((out / "manifest.json").read_text())
 for m in manifest:
     if m["fichier"]:
         continue
-    for attempt in range(6):
+    got = None
+    for suffix in ("=s0", "=w2048", ""):
         try:
-            data, ctype = get(m["source"] + "=s0")
+            got = get(m["source"] + suffix)
             break
         except urllib.error.HTTPError as e:
-            print(f"  {e.code} {m['page']} (essai {attempt + 1})", flush=True)
-            time.sleep(20 * (attempt + 1))
-    else:
+            print(f"  {e.code} {m['page']} {suffix or '(sans suffixe)'}", flush=True)
+            time.sleep(1)
+    if got is None:
         continue
+    data, ctype = got
     folder = out / m["page"]
     n = len(list(folder.glob("*"))) + 1 if folder.exists() else 1
     dest = folder / f"r{n:02d}.{EXT.get(ctype, 'bin')}"
@@ -29,6 +31,6 @@ for m in manifest:
     dest.write_bytes(data)
     m["fichier"], m["octets"] = str(dest.relative_to(out)), len(data)
     print(f"ok {dest}", flush=True)
-    time.sleep(3)
+    time.sleep(1)
 (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1))
 print(sum(1 for m in manifest if not m["fichier"]), "échecs restants")
