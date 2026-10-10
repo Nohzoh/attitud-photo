@@ -1,0 +1,20 @@
+{{/* Témoignages (data/temoignages.yaml). Paramètres : rubrique (facultatif, sinon tous), titre.
+     Un témoignage sans texte n'est pas affiché. */}}
+{{ $items := slice }}
+{{ range hugo.Data.temoignages }}
+  {{ if and .texte (or (not $.rubrique) (in .rubriques $.rubrique)) }}{{ $items = $items | append . }}{{ end }}
+{{ end }}
+{{ with $items }}
+<section class="section-block">
+  <h2>{{ $.titre | default "Ils en parlent" }}</h2>
+  <div class="quotes">
+    {{ range . }}
+      <figure class="quote">
+        <blockquote>{{ .texte | markdownify }}</blockquote>
+        <figcaption>{{ .auteur }}</figcaption>
+      </figure>
+    {{ end }}
+  </div>
+  {{ with site.Params.contact.reviews_url }}<p class="more-link"><a href="{{ . }}" rel="noopener">Tous les avis sur Google</a></p>{{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.sous_titre }}<p class="lead">{{ . }}</p>{{ end }}
+</header>
+<div class="prose">{{ .Content }}</div>
+{{ with site.Params.contact }}
+<section class="contact-grid">
+  <a class="contact-card" href="mailto:{{ .email }}"><span class="contact-label">E-mail</span>{{ .email }}</a>
+  <a class="contact-card" href="tel:{{ .phone_intl }}"><span class="contact-label">Téléphone</span>{{ .phone }}</a>
+  {{ with .form_url }}<a class="contact-card" href="{{ . }}" rel="noopener"><span class="contact-label">Formulaire</span>Décrire mon projet</a>{{ end }}
+  <a class="contact-card" href="{{ .map_url }}" rel="noopener"><span class="contact-label">Adresse</span>{{ .address }}</a>
+</section>
+<p class="prose footer-muted">Zone d'intervention : {{ .area }}. Au-delà, des frais de déplacement s'appliquent.</p>
+{{ end }}
+{{ end }}

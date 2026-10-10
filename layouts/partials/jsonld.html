@@ -1,0 +1,16 @@
+{{/* Données structurées pour la recherche locale (Google Maps, résultats « près de chez moi »). */}}
+{{ $c := site.Params.contact }}
+{{ $data := dict
+  "@context" "https://schema.org"
+  "@type" "ProfessionalService"
+  "name" site.Title
+  "description" site.Params.description
+  "url" site.Home.Permalink
+  "email" $c.email
+  "telephone" $c.phone_intl
+  "areaServed" $c.area
+  "address" (dict "@type" "PostalAddress" "streetAddress" "10 avenue Victor Hugo" "postalCode" "94120" "addressLocality" "Fontenay-sous-Bois" "addressCountry" "FR")
+  "geo" (dict "@type" "GeoCoordinates" "latitude" 48.854365 "longitude" 2.47059)
+  "sameAs" (apply $c.socials "index" "." "url")
+}}
+<script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>

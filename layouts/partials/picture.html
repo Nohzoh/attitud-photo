@@ -1,0 +1,16 @@
+{{/* Image responsive : déclinaisons WebP en 800, 1 600 et 2 400 px de large, sans jamais agrandir l'original.
+     Paramètres : img (ressource image), alt, sizes (facultatif), class (facultatif), eager (facultatif). */}}
+{{ $img := .img | images.Filter images.AutoOrient }}
+{{ $widths := slice }}
+{{ range slice 800 1600 2400 }}{{ if le . $img.Width }}{{ $widths = $widths | append . }}{{ end }}{{ end }}
+{{ if not $widths }}{{ $widths = slice $img.Width }}{{ end }}
+{{ $srcset := slice }}
+{{ $src := "" }}
+{{ range $widths }}
+  {{ $r := $img.Process (printf "resize %dx webp" .) }}
+  {{ $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $r.Width) }}
+  {{ if or (not $src) (le .  1600) }}{{ $src = $r }}{{ end }}
+{{ end }}
+<img src="{{ $src.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ .sizes | default "100vw" }}"
+  width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ .alt }}"{{ with .class }} class="{{ . }}"{{ end }}
+  {{ if .eager }}fetchpriority="high"{{ else }}loading="lazy" decoding="async"{{ end }}>

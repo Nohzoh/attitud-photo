@@ -1,0 +1,16 @@
+{{ define "main" }}
+<header class="page-header">
+  {{ with .Parent }}{{ if not .IsHome }}<a class="back-link" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}{{ end }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.sous_titre }}<p class="lead">{{ . }}</p>{{ end }}
+</header>
+
+{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+{{ if .Resources.ByType "image" }}
+<section class="section-block">{{ partial "gallery.html" . }}</section>
+{{ end }}
+
+{{ if .Params.temoignages }}{{ partial "temoignages.html" (dict "titre" "Témoignages") }}{{ end }}
+{{ if not .Params.sans_cta }}{{ partial "cta.html" (dict "titre" .Params.cta_titre "bouton" .Params.cta_bouton) }}{{ end }}
+{{ end }}

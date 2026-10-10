@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ $selection := slice }}
+{{ with site.GetPage "/selection" }}{{ $selection = sort (.Resources.ByType "image") "Name" }}{{ end }}
+
+<section class="hero">
+  {{ with index $selection 0 }}
+    {{ partial "picture.html" (dict "img" . "alt" "" "class" "hero-image" "eager" true) }}
+  {{ end }}
+  <div class="hero-text">
+    <h1>{{ site.Params.tagline }}</h1>
+    <p>{{ .Params.accroche }}</p>
+  </div>
+</section>
+
+<section class="intro prose">
+  {{ .Content }}
+  <p class="signature">{{ site.Params.author }}, photographe &amp; artiste</p>
+</section>
+
+{{ with after 1 $selection }}
+<section class="section-block">
+  <h2 class="visually-hidden">Sélection de photos</h2>
+  <div class="gallery" data-gallery>
+    {{ range . }}
+      {{ $img := . | images.Filter images.AutoOrient }}
+      {{ $full := $img.Process "resize 2400x webp" }}{{ if le $img.Width 2400 }}{{ $full = $img.Process "webp" }}{{ end }}
+      <a class="gallery-item" href="{{ $full.RelPermalink }}" data-width="{{ $full.Width }}" data-height="{{ $full.Height }}" style="--ratio: {{ div (float $img.Width) $img.Height }}">
+        {{ partial "picture.html" (dict "img" . "alt" "" "sizes" "(max-width: 700px) 100vw, 40vw") }}
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="section-block">
+  <h2>Découvrir</h2>
+  <div class="cards">
+    {{ range site.Menus.main }}
+      {{ with .Page }}{{ if and .IsSection (ne .Section "") }}
+        <a class="card" href="{{ .RelPermalink }}">
+          {{ $cover := partial "cover.html" . }}
+          {{ if not $cover }}{{ with .Pages }}{{ $cover = partial "cover.html" (index . 0) }}{{ end }}{{ end }}
+          {{ with $cover }}
+            {{ $thumb := (. | images.Filter images.AutoOrient).Fill "900x1125 Center webp" }}
+            <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy" decoding="async">
+          {{ end }}
+          <span class="card-title">{{ .Title }}</span>
+          {{ with .Params.sous_titre }}<span class="card-text">{{ . }}</span>{{ end }}
+        </a>
+      {{ end }}{{ end }}
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "temoignages.html" (dict "titre" "Ils en parlent") }}
+{{ partial "cta.html" dict }}
+{{ end }}

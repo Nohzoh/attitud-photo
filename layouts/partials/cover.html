@@ -1,0 +1,5 @@
+{{/* Image de couverture d'une page : le fichier nommé dans « couverture », sinon la première image du bundle. */}}
+{{ $img := "" }}
+{{ with .Params.couverture }}{{ $img = $.Resources.Get . }}{{ end }}
+{{ if not $img }}{{ with sort (.Resources.ByType "image") "Name" }}{{ $img = index . 0 }}{{ end }}{{ end }}
+{{ return $img }}

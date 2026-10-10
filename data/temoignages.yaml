@@ -1,0 +1,34 @@
+# Avis clients affichés sur le site. Un avis sans « texte » n'est pas affiché.
+# rubriques : portraits, mariages, spectacles, regard-dartiste (sur quelles pages l'avis apparaît).
+# Tous les avis apparaissent aussi sur la page À propos et sur l'accueil.
+# TEXTES À COLLER depuis les avis Google (page « Témoignages » de l'ancien site).
+- auteur: "Thairi Taleb"
+  rubriques: [mariages]
+  texte: ""
+- auteur: "Thu"
+  rubriques: [portraits]
+  texte: ""
+- auteur: "Chantal de Mage"
+  rubriques: [spectacles]
+  texte: ""
+- auteur: "François Creppy"
+  rubriques: []
+  texte: ""
+- auteur: "Keny Vaudois"
+  rubriques: []
+  texte: ""
+- auteur: "Sylvie Poupé"
+  rubriques: [portraits]
+  texte: ""
+- auteur: "Franck Atlan"
+  rubriques: []
+  texte: ""
+- auteur: "Martine Fitoussi"
+  rubriques: []
+  texte: ""
+- auteur: "Lelik Ali"
+  rubriques: []
+  texte: ""
+- auteur: "Laura A."
+  rubriques: [portraits]
+  texte: ""

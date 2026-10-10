@@ -1,0 +1,76 @@
+# L'adresse définitive. Au déploiement, le workflow GitHub Actions la remplace
+# par l'adresse de publication réelle (préversion ou domaine personnalisé).
+baseURL = "https://www.attitud.photo/"
+locale = "fr-FR"
+defaultContentLanguage = "fr"
+title = "ATTI-TUD Photo"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+  description = "Calamithi, photographe à Fontenay-sous-Bois : portraits, mariages, spectacles et créations artistiques. Des images qui racontent."
+  author = "Calamithi"
+  tagline = "Des images qui racontent."
+  themeColor = "#f7f3ee"
+  copyright_owner = "Calamithi"
+  copyright_year_start = 2024
+  livret_url = "https://calamithi.attitud.photo/"
+
+[params.contact]
+  email = "calamithi@gmail.com"
+  phone = "06 07 47 27 65"
+  phone_intl = "+33607472765"
+  address = "10 avenue Victor Hugo, 94120 Fontenay-sous-Bois"
+  area = "Fontenay-sous-Bois, Paris et l'Est parisien"
+  map_url = "https://www.openstreetmap.org/?mlat=48.854365&mlon=2.47059#map=17/48.854365/2.47059"
+  form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdXeLR3-qkA1x7-5GvEHqNXZODOBLY0LQGH5x0riCbavgQHnw/viewform"
+  reviews_url = "https://www.google.com/maps/search/?api=1&query=Atti-TUD+Photo+Fontenay-sous-Bois"
+
+[[params.contact.socials]]
+  name = "Instagram"
+  url = "https://www.instagram.com/calamithi_photo/"
+
+[[params.contact.socials]]
+  name = "Facebook"
+  url = "https://www.facebook.com/AttitudPhoto"
+
+# Menu principal, dans l'ordre d'affichage.
+[[menus.main]]
+  name = "Portraits"
+  pageRef = "/portraits"
+  weight = 10
+[[menus.main]]
+  name = "Mariages"
+  pageRef = "/mariages"
+  weight = 20
+[[menus.main]]
+  name = "Spectacles"
+  pageRef = "/spectacles"
+  weight = 30
+[[menus.main]]
+  name = "Regard d'artiste"
+  pageRef = "/regard-dartiste"
+  weight = 40
+[[menus.main]]
+  name = "À propos"
+  pageRef = "/a-propos"
+  weight = 50
+[[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 60
+
+[imaging]
+  resampleFilter = "Lanczos"
+[imaging.webp]
+  quality = 82
+[imaging.jpeg]
+  quality = 82
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.goldmark.extensions.typographer]
+  # Guillemets français et apostrophes typographiques automatiques.
+  leftDoubleQuote = "«&nbsp;"
+  rightDoubleQuote = "&nbsp;»"
