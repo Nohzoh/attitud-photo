@@ -5,8 +5,11 @@
     <a class="skip-link" href="#contenu">Passer au contenu</a>
     <header class="site-header">
       <a class="brand" href="{{ "" | relURL }}">
-        <span class="brand-name">{{ site.Title }}</span>
-        <span class="brand-signature">{{ site.Params.author }}</span>
+        <img class="brand-logo" src="{{ "logo.png" | relURL }}" width="40" height="55" alt="">
+        <span class="brand-text">
+          <span class="brand-name">{{ site.Title }}</span>
+          <span class="brand-signature">{{ site.Params.author }}</span>
+        </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
       <nav class="site-nav" id="menu" aria-label="Navigation principale">
@@ -47,7 +50,7 @@
           </ul>
         </div>
       </div>
-      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}</p>
+      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés. Les photographies de ce site sont protégées par le droit d'auteur : toute copie ou réutilisation sans autorisation écrite est interdite.{{ with site.GetPage "/droits-utilisation" }} · <a href="{{ .RelPermalink }}">Droits d'utilisation</a>{{ end }}{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}</p>
     </footer>
 
     <dialog class="lightbox" data-lightbox aria-label="Visionneuse">
