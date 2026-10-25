@@ -33,6 +33,20 @@ Site de Calamithi (ATTI-TUD Photo), photographe à Fontenay-sous-Bois. Site stat
 
 Depuis le site de GitHub : ouvrir le dossier de la rubrique, puis « Add file › Upload files ».
 
+## Placer une photo à côté d'un paragraphe
+
+Sur une page fixe (comme `content/a-propos/index.md`), encadrer le paragraphe avec le nom de la photo qui l'illustre :
+
+```markdown
+{{< illustration photo="02.jpg" alt="Description de la photo" >}}
+## Titre du paragraphe
+
+Texte du paragraphe.
+{{< /illustration >}}
+```
+
+Les photos alternent à droite et à gauche du texte (sous le texte sur mobile). Une photo à côté du titre de la page s'indique dans l'en-tête avec `photo_entete: "01.jpg"`. Dès qu'une page utilise `illustration`, la galerie en bas de page disparaît : chaque photo doit donc être placée.
+
 ## Préparer les photos
 
 Exporter en JPEG, **2 400 pixels sur le côté le plus long**, qualité 85 (environ 400 à 700 Ko par photo). Hugo fabrique lui-même les versions plus petites (WebP 800, 1 600 et 2 400 px) : ne jamais déposer de fichiers RAW ni d'originaux pleine définition, le dépôt grossirait inutilement.

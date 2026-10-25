@@ -1,13 +1,28 @@
 {{ define "main" }}
-<header class="page-header">
-  {{ with .Parent }}{{ if not .IsHome }}<a class="back-link" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}{{ end }}
-  <h1>{{ .Title }}</h1>
-  {{ with .Params.sous_titre }}<p class="lead">{{ . }}</p>{{ end }}
+{{/* Avec le shortcode « illustration », chaque photo est placée à côté de son paragraphe au lieu d'une galerie en bas de page. */}}
+{{ $illustree := .HasShortcode "illustration" }}
+<div{{ if $illustree }} class="page-illustree" data-gallery{{ end }}>
+<header class="page-header{{ with .Params.photo_entete }} page-header-photo{{ end }}">
+  <div>
+    {{ with .Parent }}{{ if not .IsHome }}<a class="back-link" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.sous_titre }}<p class="lead">{{ . }}</p>{{ end }}
+  </div>
+  {{ with .Params.photo_entete }}{{ with $.Resources.Get . }}
+  {{ $img := . | images.Filter images.AutoOrient }}
+  {{ $full := $img }}
+  {{ if gt $img.Width 2400 }}{{ $full = $img.Process "resize 2400x webp" }}{{ else }}{{ $full = $img.Process "webp" }}{{ end }}
+  <a class="gallery-item illustre-photo" href="{{ $full.RelPermalink }}" data-width="{{ $full.Width }}" data-height="{{ $full.Height }}"
+    style="--ratio: {{ div (float $img.Width) $img.Height }}">
+    {{ partial "picture.html" (dict "img" . "alt" ($.Params.photo_entete_alt | default $.Title) "sizes" "(max-width: 760px) 100vw, 300px" "eager" true) }}
+  </a>
+  {{ end }}{{ end }}
 </header>
 
 {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+</div>
 
-{{ if .Resources.ByType "image" }}
+{{ if and (.Resources.ByType "image") (not $illustree) }}
 <section class="section-block">{{ partial "gallery.html" . }}</section>
 {{ end }}
 
