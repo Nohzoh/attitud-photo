@@ -4,6 +4,7 @@ sous_titre: "Quand la photographie devient matière à créer."
 description: "Créations photographiques de Calamithi : images transformées, compositions et séries personnelles. Exposition « Cartographie de l'instable », tirages sur toile."
 weight: 40
 galerie: true
+couverture: "11.jpg"
 cta_titre: "Voir les tirages de l'exposition"
 cta_bouton: "Prendre rendez-vous"
 ---
