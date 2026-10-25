@@ -45,7 +45,7 @@ Texte du paragraphe.
 {{< /illustration >}}
 ```
 
-Les photos alternent à droite et à gauche du texte (sous le texte sur mobile). Une photo à côté du titre de la page s'indique dans l'en-tête avec `photo_entete: "01.jpg"`. Dès qu'une page utilise `illustration`, la galerie en bas de page disparaît : chaque photo doit donc être placée.
+Les photos alternent à gauche et à droite du texte, en commençant à gauche (sous le texte sur mobile). Une photo à côté du titre de la page s'indique dans l'en-tête avec `photo_entete: "01.jpg"`. Dès qu'une page utilise `illustration`, la galerie en bas de page disparaît : chaque photo doit donc être placée.
 
 ## Préparer les photos
 
