@@ -8,7 +8,7 @@ Site de Calamithi (ATTI-TUD Photo), photographe à Fontenay-sous-Bois. Site stat
 | --- | --- |
 | `content/_index.md` | Texte de la page d'accueil |
 | `content/selection/` | Photos de l'accueil : la première sert d'image d'ouverture, les suivantes de sélection |
-| `content/portraits/`, `mariages/`, `spectacles/` | Une rubrique par prestation : texte et formules dans `_index.md` |
+| `content/portraits/`, `mariages/`, `spectacles/` | Une rubrique par prestation : texte et formules dans `_index.md`. Les photos posées à côté illustrent la page : la première sert de bandeau, les suivantes s'affichent sous le texte |
 | `content/<rubrique>/<galerie>/` | Une galerie = un dossier avec un `index.md` et ses photos |
 | `content/regard-dartiste/` | Texte et photos de la page artistique |
 | `content/a-propos/`, `contact/`, `mentions-legales/` | Pages fixes |
