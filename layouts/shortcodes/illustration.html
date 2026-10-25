@@ -1,0 +1,20 @@
+{{/* Paragraphe illustré : le texte placé entre les deux balises, avec sa photo à côté (au-dessus sur mobile).
+     Les photos alternent à droite et à gauche, et s'ouvrent dans la visionneuse avec les autres photos de la page.
+     Usage dans un index.md :
+       {{< illustration photo="02.jpg" alt="Description de la photo" >}}
+       ## Titre
+       Texte en Markdown.
+       {{< /illustration >}} */}}
+{{ $nom := .Get "photo" }}
+{{ $res := .Page.Resources.Get $nom }}
+{{ if not $res }}{{ errorf "illustration : photo %q introuvable à côté de %s" $nom .Page.File.Path }}{{ end }}
+{{ $img := $res | images.Filter images.AutoOrient }}
+{{ $full := $img }}
+{{ if gt $img.Width 2400 }}{{ $full = $img.Process "resize 2400x webp" }}{{ else }}{{ $full = $img.Process "webp" }}{{ end }}
+<section class="illustre">
+  <div class="illustre-texte">{{ .Inner | .Page.RenderString (dict "display" "block") }}</div>
+  <a class="gallery-item illustre-photo" href="{{ $full.RelPermalink }}" data-width="{{ $full.Width }}" data-height="{{ $full.Height }}"
+    style="--ratio: {{ div (float $img.Width) $img.Height }}">
+    {{ partial "picture.html" (dict "img" $res "alt" (.Get "alt") "sizes" "(max-width: 760px) 100vw, 40vw") }}
+  </a>
+</section>
