@@ -74,11 +74,12 @@ main:focus { outline: none; }
 .prose { width: var(--text-width); margin: 0 auto; font-size: 1.08rem; }
 .prose h2 { font-family: var(--serif); font-weight: 500; font-size: 1.9rem; margin: 2.5rem 0 .5rem; }
 .prose h3 { margin: 1.75rem 0 .25rem; }
-/* Paragraphes illustrés (shortcode « illustration ») : texte et photo côte à côte, la photo alterne de côté. */
+/* Paragraphes illustrés (shortcode « illustration ») : texte et photo côte à côte, la photo alterne de côté,
+   en commençant à gauche pour répondre à la photo de l'en-tête, placée à droite. */
 .page-illustree .page-header, .page-illustree .prose { width: min(1080px, 100% - 2 * var(--gutter)); }
 .page-header-photo { display: grid; grid-template-columns: 1fr minmax(0, 300px); gap: 2rem 3rem; align-items: center; }
 .illustre { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem; align-items: center; margin: 3rem 0; }
-.illustre:nth-of-type(even) .illustre-photo { order: -1; }
+.illustre:nth-of-type(odd) .illustre-photo { order: -1; }
 .illustre-texte > :first-child { margin-top: 0; }
 .illustre-texte h2 { line-height: 1.25; }
 .illustre-texte > :last-child { margin-bottom: 0; }
@@ -89,7 +90,7 @@ a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden;
   .page-header-photo, .illustre { grid-template-columns: 1fr; }
   .page-header-photo .illustre-photo { max-width: 300px; }
   /* Sur mobile, la photo suit toujours son paragraphe, comme sur l'ancien site. */
-  .illustre:nth-of-type(even) .illustre-photo { order: 0; }
+  .illustre:nth-of-type(odd) .illustre-photo { order: 0; }
 }
 .notes { font-size: .95rem; color: var(--muted); }
 .section-block { width: var(--page-width); margin: 3.5rem auto 0; }
