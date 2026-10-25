@@ -4,11 +4,19 @@
   {{ with .Params.sous_titre }}<p class="lead">{{ . }}</p>{{ end }}
 </header>
 
-{{ with and (not .Params.galerie) (partial "cover.html" .) }}
+{{ $cover := and (not .Params.galerie) (partial "cover.html" .) }}
+{{ with $cover }}
 <div class="page-cover">{{ partial "picture.html" (dict "img" . "alt" "" "eager" true) }}</div>
 {{ end }}
 
 <div class="prose">{{ .Content }}</div>
+
+{{/* Les autres photos d'une rubrique (hors couverture) illustrent la page. */}}
+{{ with $cover }}
+  {{ $autres := slice }}
+  {{ range sort ($.Resources.ByType "image") "Name" }}{{ if ne .Name $cover.Name }}{{ $autres = $autres | append . }}{{ end }}{{ end }}
+  {{ with $autres }}<section class="section-block">{{ partial "gallery-grid.html" (dict "page" $ "images" .) }}</section>{{ end }}
+{{ end }}
 
 {{ partial "offres.html" . }}
 {{ with .Params.notes_tarifs }}<div class="prose notes">{{ . | markdownify }}</div>{{ end }}

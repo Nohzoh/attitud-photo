@@ -3,7 +3,7 @@ title: "Spectacles & événements"
 titre_seo: "Photographe de spectacles et d'événements en Île-de-France"
 sous_titre: "Saisir l'essence de l'instant."
 description: "Reportages photo de spectacles, concerts, festivals et événements, sur scène et en coulisses. À partir de 190 € la première heure."
-aliases: ["/spectacles-evenements/", "/chantal-de-mage/"]
+aliases: ["/spectacles-evenements/"]
 weight: 30
 offres_titre: "Votre reportage photo"
 offres:

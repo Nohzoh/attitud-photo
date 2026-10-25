@@ -1,17 +1,2 @@
-{{/* Grille justifiée de toutes les photos d'un page bundle, triées par nom de fichier.
-     Chaque vignette ouvre la visionneuse plein écran (site.js) ; sans JavaScript, le lien ouvre l'image. */}}
-{{ $page := . }}
-{{ $legendes := .Params.legendes | default dict }}
-<div class="gallery" data-gallery>
-  {{ range $i, $res := sort (.Resources.ByType "image") "Name" }}
-    {{ $img := $res | images.Filter images.AutoOrient }}
-    {{ $alt := index $legendes $res.Name | default (printf "%s, photo %d" $page.Title (add $i 1)) }}
-    {{ $full := $img }}
-    {{ if gt $img.Width 2400 }}{{ $full = $img.Process "resize 2400x webp" }}{{ else }}{{ $full = $img.Process "webp" }}{{ end }}
-    {{ $ratio := div (float $img.Width) $img.Height }}
-    <a class="gallery-item" href="{{ $full.RelPermalink }}" data-width="{{ $full.Width }}" data-height="{{ $full.Height }}"
-      style="--ratio: {{ $ratio }}">
-      {{ partial "picture.html" (dict "img" $res "alt" $alt "sizes" "(max-width: 700px) 100vw, 50vw") }}
-    </a>
-  {{ end }}
-</div>
+{{/* Toutes les photos d'un page bundle, triées par nom de fichier. */}}
+{{ partial "gallery-grid.html" (dict "page" . "images" (sort (.Resources.ByType "image") "Name")) }}
