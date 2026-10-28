@@ -19,4 +19,4 @@ legendes:
   couverture.jpg: "Oscar Zouzout, Kevin O. Salles et Florian Guérin"
 ---
 
-Voir aussi les séances de [Barbara Lukumuena](../barbara/), [Damien Rodriguez](../damien/) et [Keny Vaudois](../keny/).
+Voir aussi les séances de [Barbara Lukumuena](../barbara/), [Damien Rodriguez](../damien/), [Keny Vaudois](../keny/) et [Victoriane Pinon](../victoriane/).
