@@ -92,7 +92,11 @@ a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden;
   /* Sur mobile, la photo suit toujours son paragraphe, comme sur l'ancien site. */
   .illustre:nth-of-type(odd) .illustre-photo { order: 0; }
 }
-.notes { font-size: .95rem; color: var(--muted); }
+.notes { max-width: 52rem; margin-top: 1rem; font-size: .95rem; color: var(--muted); }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; }
+.prose th, .prose td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--border); }
+.prose th { font-weight: 600; }
+.prose td:last-child, .prose th:last-child { text-align: right; white-space: nowrap; }
 .section-block { width: var(--page-width); margin: 3.5rem auto 0; }
 .section-block > h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0 0 1.25rem; }
 .footer-muted { color: var(--muted); }
@@ -106,6 +110,9 @@ a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden;
 }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
 .gallery-item:hover img { transform: scale(1.02); }
+.gallery-colonnes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.25rem; }
+.gallery-colonnes::after { content: none; }
+.gallery-colonnes .gallery-item { aspect-ratio: 4 / 3; border-radius: var(--radius); }
 @media (max-width: 520px) { .gallery-item { flex-basis: 100%; } }
 
 /* Cartes de galeries et d'univers */
@@ -137,6 +144,8 @@ a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden;
 /* Appel à l'action */
 .cta { width: var(--page-width); margin: 4rem auto 0; padding: 3rem 1.5rem; text-align: center; border-top: 1px solid var(--border); }
 .cta-title { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 1.25rem; }
+.cta-text { max-width: 38rem; margin: -.25rem auto 1.75rem; color: var(--muted); }
+.cta-text p { margin: 0 0 .75rem; }
 .button { display: inline-block; background: var(--text); color: var(--bg); text-decoration: none; padding: .8rem 1.8rem; border-radius: 999px; }
 .button:hover { opacity: .85; }
 

@@ -1,6 +1,6 @@
 ---
 title: "Keny Vaudois"
-sous_titre: "Thème Peaky Blinders"
+sous_titre: ""
 weight: 36
 aliases: ["/keny/"]
 # Texte alternatif de chaque photo (facultatif, sinon « titre, photo N ») :

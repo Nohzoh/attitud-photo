@@ -21,8 +21,12 @@ offres:
 inclus:
   - "Sélection et traitement des photos"
   - "Galerie privée en ligne"
-notes_tarifs: "Ces formules sont des points de départ : chaque mariage est différent, parlons du vôtre. Frais de déplacement en supplément."
-cta_titre: "Vous préparez votre mariage ?"
+notes_tarifs: "Ces formules sont des points de départ : chaque mariage est différent, parlons du vôtre. Déplacement offert jusqu'à 20 minutes de Fontenay-sous-Bois, puis forfait selon le temps de trajet ; chaque trajet entre les lieux de la journée est compté. [Détail des frais de déplacement](../deplacements/)"
+cta_titre: "Une présence adaptée à votre journée"
+cta_texte: |
+  Vous souhaitez une présence plus courte, ou simplement quelques photos pour immortaliser un moment particulier ?
+  
+  Chaque mariage est unique : si vous avez besoin de moins de deux heures de présence ou d'un nombre de photos réduit, n'hésitez pas à me contacter. Nous imaginerons ensemble une formule sur mesure, adaptée à vos envies et à votre budget.
 cta_bouton: "Parlons de votre mariage"
 ---
 

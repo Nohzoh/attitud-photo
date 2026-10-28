@@ -7,7 +7,9 @@
       <article class="offer">
         <h3>{{ .titre }}</h3>
         <p class="offer-price">{{ .prix }}</p>
-        {{ with .duree }}<p class="offer-duration">{{ . }}</p>{{ end }}
+        {{ if or .duree .photos }}
+          <p class="offer-duration">{{ .duree }}{{ if and .duree .photos }}<br>{{ end }}{{ .photos }}</p>
+        {{ end }}
         {{ with .description }}<p>{{ . }}</p>{{ end }}
       </article>
     {{ end }}
@@ -17,5 +19,6 @@
       {{ range . }}<li>{{ . }}</li>{{ end }}
     </ul>
   {{ end }}
+  {{ with $.Params.notes_tarifs }}<div class="notes">{{ . | markdownify }}</div>{{ end }}
 </section>
 {{ end }}
