@@ -1,11 +1,23 @@
-{{/* Données structurées pour la recherche locale (Google Maps, résultats « près de chez moi »). */}}
+{{/* Données structurées de la page d'accueil. Paramètre : image (la photo de partage, facultative).
+     « WebSite » donne à Google le nom du site à afficher dans les résultats ;
+     « ProfessionalService » sert la recherche locale (Google Maps, résultats « près de chez moi »). */}}
 {{ $c := site.Params.contact }}
-{{ $data := dict
-  "@context" "https://schema.org"
-  "@type" "ProfessionalService"
+{{ $site := dict
+  "@type" "WebSite"
+  "@id" (printf "%s#site" site.Home.Permalink)
   "name" site.Title
+  "alternateName" (slice "ATTI-TUD PHOTO" site.Params.author)
+  "url" site.Home.Permalink
+  "inLanguage" "fr-FR"
+}}
+{{ $service := dict
+  "@type" "ProfessionalService"
+  "@id" (printf "%s#studio" site.Home.Permalink)
+  "name" site.Title
+  "alternateName" site.Params.author
   "description" site.Params.description
   "url" site.Home.Permalink
+  "logo" ("logo.png" | absURL)
   "email" $c.email
   "telephone" $c.phone_intl
   "areaServed" $c.area
@@ -13,4 +25,9 @@
   "geo" (dict "@type" "GeoCoordinates" "latitude" 48.854365 "longitude" 2.47059)
   "sameAs" (apply $c.socials "index" "." "url")
 }}
+{{ with .image }}
+  {{ $img := (. | images.Filter images.AutoOrient).Fill "1200x630 Center jpg q80" }}
+  {{ $service = merge $service (dict "image" $img.Permalink) }}
+{{ end }}
+{{ $data := dict "@context" "https://schema.org" "@graph" (slice $site $service) }}
 <script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>

@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ $title := site.Title }}
-{{ if not .IsHome }}{{ $title = printf "%s · %s" (.Params.titre_seo | default .Title) site.Title }}{{ end }}
+{{ with .Params.titre_seo | default (cond .IsHome "" .Title) }}{{ $title = printf "%s · %s" . site.Title }}{{ end }}
 {{ $description := .Description | default site.Params.description }}
 {{ $share := partial "cover.html" . }}
 {{ if and (not $share) .IsHome }}{{ with site.GetPage "/selection" }}{{ $share = partial "cover.html" . }}{{ end }}{{ end }}
@@ -28,4 +28,4 @@
 <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
-{{ if .IsHome }}{{ partial "jsonld.html" . }}{{ end }}
+{{ if .IsHome }}{{ partial "jsonld.html" (dict "image" $share) }}{{ end }}
