@@ -1,2 +1,5 @@
-{{/* Toutes les photos d'un page bundle, triées par nom de fichier. */}}
-{{ partial "gallery-grid.html" (dict "page" . "images" (sort (.Resources.ByType "image") "Name")) }}
+{{/* Toutes les photos d'un page bundle, triées par nom de fichier, sauf celles listées dans « hors_galerie ». */}}
+{{ $exclues := .Params.hors_galerie | default slice }}
+{{ $images := slice }}
+{{ range sort (.Resources.ByType "image") "Name" }}{{ if not (in $exclues .Name) }}{{ $images = $images | append . }}{{ end }}{{ end }}
+{{ partial "gallery-grid.html" (dict "page" . "images" $images) }}

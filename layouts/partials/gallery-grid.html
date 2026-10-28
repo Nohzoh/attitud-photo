@@ -2,10 +2,17 @@
      Chaque vignette ouvre la visionneuse plein écran (site.js) ; sans JavaScript, le lien ouvre l'image. */}}
 {{ $page := .page }}
 {{ $legendes := $page.Params.legendes | default dict }}
+{{/* Sans légende, une description générique selon la rubrique, utile aux moteurs de recherche d'images. */}}
+{{ $genres := dict "portraits" "séance portrait" "mariages" "reportage photo" "spectacles" "reportage photo" "regard-dartiste" "création photographique" }}
+{{ $rubriques := dict "portraits" "séance portrait" "mariages" "reportage de mariage" "spectacles" "reportage de spectacle" "regard-dartiste" "création photographique" }}
+{{ $genre := index $genres $page.Section | default "photo" }}
+{{ $total := len .images }}
 <div class="gallery{{ with .class }} {{ . }}{{ end }}" data-gallery>
   {{ range $i, $res := .images }}
     {{ $img := $res | images.Filter images.AutoOrient }}
-    {{ $alt := index $legendes $res.Name | default (printf "%s, photo %d" $page.Title (add $i 1)) }}
+    {{ $alt := printf "%s, %s par %s (%d/%d)" $page.Title $genre site.Params.author (add $i 1) $total }}
+    {{ if $page.IsSection }}{{ $alt = printf "%s par %s, photographe à Fontenay-sous-Bois (%d/%d)" (strings.FirstUpper (index $rubriques $page.Section | default $genre)) site.Params.author (add $i 1) $total }}{{ end }}
+    {{ $alt = index $legendes $res.Name | default $alt }}
     {{ $full := $img }}
     {{ if gt $img.Width 2400 }}{{ $full = $img.Process "resize 2400x webp" }}{{ else }}{{ $full = $img.Process "webp" }}{{ end }}
     {{ $ratio := div (float $img.Width) $img.Height }}

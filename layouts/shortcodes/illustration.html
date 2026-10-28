@@ -4,7 +4,8 @@
        {{< illustration photo="02.jpg" alt="Description de la photo" >}}
        ## Titre
        Texte en Markdown.
-       {{< /illustration >}} */}}
+       {{< /illustration >}}
+     Avec lien="https://…", la photo mène à cette adresse au lieu de s'ouvrir dans la visionneuse. */}}
 {{ $nom := .Get "photo" }}
 {{ $res := .Page.Resources.Get $nom }}
 {{ if not $res }}{{ errorf "illustration : photo %q introuvable à côté de %s" $nom .Page.File.Path }}{{ end }}
@@ -13,8 +14,12 @@
 {{ if gt $img.Width 2400 }}{{ $full = $img.Process "resize 2400x webp" }}{{ else }}{{ $full = $img.Process "webp" }}{{ end }}
 <section class="illustre">
   <div class="illustre-texte">{{ .Inner | .Page.RenderString (dict "display" "block") }}</div>
+  {{ with .Get "lien" }}
+  <a class="illustre-photo" href="{{ . }}" style="--ratio: {{ div (float $img.Width) $img.Height }}">
+  {{ else }}
   <a class="gallery-item illustre-photo" href="{{ $full.RelPermalink }}" data-width="{{ $full.Width }}" data-height="{{ $full.Height }}"
     style="--ratio: {{ div (float $img.Width) $img.Height }}">
+  {{ end }}
     {{ partial "picture.html" (dict "img" $res "alt" (.Get "alt") "sizes" "(max-width: 760px) 100vw, 40vw") }}
   </a>
 </section>

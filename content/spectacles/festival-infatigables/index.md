@@ -1,5 +1,6 @@
 ---
 title: "Festival Infatigables"
+description: "Trois jours de spectacles, de concerts et d'animations au festival « Les Infatigables », photographiés par Calamithi."
 sous_titre: ""
 weight: 30
 aliases: ["/festival-infatigables/"]

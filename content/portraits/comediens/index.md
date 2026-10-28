@@ -1,5 +1,6 @@
 ---
 title: "Comédiens"
+description: "Portraits de comédiens et de comédiennes par Calamithi, photographe à Fontenay-sous-Bois et dans l'Est parisien."
 sous_titre: ""
 weight: 30
 aliases: ["/comédiens/"]
