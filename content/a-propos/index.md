@@ -11,28 +11,38 @@ photo_entete: "01.jpg"
 photo_entete_alt: "Autoportrait de Calamithi dans un miroir, appareil photo à l'œil"
 ---
 
-<!-- TEXTE À RELIRE : reformulé d'après la page « Un peu de moi » de l'ancien site. -->
-
 {{< illustration photo="02.jpg" alt="Lunettes constellées de gouttes de pluie devant une peluche ébouriffée" >}}
 ## Un pseudo, une histoire
 
-Calamithi vient de mon prénom, Thi Uyên, que l'on raccourcit souvent en « Thi ». J'en ai fait un jeu de mots.
+Calamithi est née bien avant ATTI-TUD PHOTO. Mon prénom, Thi Uyên, étant souvent raccourci en « Thi », plus facile à prononcer, j'en ai fait un jeu de mots.
 {{< /illustration >}}
 
 {{< illustration photo="03.jpg" alt="Autoportrait flou à travers une vitre griffée, comme une toile" >}}
 ## De la peinture à la photographie
 
-J'aime la peinture, en particulier les impressionnistes et les surréalistes. C'est pourtant vers la photographie que je me suis tournée, pour garder une trace de ce qui me touche.
+J'adore la peinture, surtout les impressionnistes et les surréalistes. Mais le pinceau n'étant manifestement pas mon meilleur moyen d'expression, j'ai trouvé autre chose : un appareil photo.
+
+Je photographie d'abord pour garder une trace de ce que j'ai vu et de ce qui m'a touchée.
 {{< /illustration >}}
 
 {{< illustration photo="04.jpg" alt="Femme allongée sur un plancher, le regard vers l'objectif" >}}
 ## Et puis il y a les gens
 
-Photographier quelqu'un, c'est chercher une expression, une beauté, une attitude. Je parle beaucoup pendant les séances : vous n'avez donc pas besoin de savoir poser.
+Photographier quelqu'un, c'est aussi garder une trace de ce que j'ai perçu en lui, de ce qu'il a choisi de me montrer.
+
+Une expression, une attitude, une beauté singulière, parfois un bout de son histoire.
+
+Pendant les séances, je parle, je questionne, j'écoute, je plaisante aussi.
+
+Pas besoin de savoir poser. On commence par faire connaissance, les photos viennent ensuite.
 {{< /illustration >}}
 
 {{< illustration photo="05.jpg" alt="Visage démultiplié et déformé derrière un verre cannelé" >}}
-## Entre le vrai et ce que l'on choisit de montrer
+## Entre le vrai et l'imaginaire
 
-Un portrait dit-il qui l'on est, ou ce que l'on choisit de montrer ? J'aime le vrai, mais j'aime aussi l'imaginaire.
+Un portrait peut-il vraiment raconter qui est une personne ? Je n'en suis pas certaine. Et ce n'est peut-être pas ce que je cherche.
+
+J'aime le vrai autant que l'imaginaire. Une photographie n'a pas besoin de reproduire fidèlement la réalité pour raconter quelque chose de juste.
+
+Observer ce qui existe, puis chercher une autre façon de le montrer. C'est sans doute là que se rencontrent chez moi photographie et création.
 {{< /illustration >}}
