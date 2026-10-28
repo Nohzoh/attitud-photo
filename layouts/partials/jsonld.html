@@ -21,6 +21,7 @@
   "email" $c.email
   "telephone" $c.phone_intl
   "areaServed" $c.area
+  "priceRange" site.Params.price_range
   "address" (dict "@type" "PostalAddress" "streetAddress" "10 avenue Victor Hugo" "postalCode" "94120" "addressLocality" "Fontenay-sous-Bois" "addressCountry" "FR")
   "geo" (dict "@type" "GeoCoordinates" "latitude" 48.854365 "longitude" 2.47059)
   "sameAs" (apply $c.socials "index" "." "url")
