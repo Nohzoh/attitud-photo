@@ -84,8 +84,8 @@ main:focus { outline: none; }
 .illustre-texte h2 { line-height: 1.25; }
 .illustre-texte > :last-child { margin-bottom: 0; }
 a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden; border-radius: var(--radius); background: var(--border); }
-.illustre-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-.illustre-photo:hover img { transform: scale(1.02); }
+.illustre-photo img, .illustre-photo video { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.illustre-photo:hover img, .illustre-photo:hover video { transform: scale(1.02); }
 @media (max-width: 760px) {
   .page-header-photo, .illustre { grid-template-columns: 1fr; }
   .page-header-photo .illustre-photo { max-width: 300px; }

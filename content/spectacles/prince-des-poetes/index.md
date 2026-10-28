@@ -1,5 +1,6 @@
 ---
 title: "Le Prince des poètes"
+description: "Le Prince des poètes, sur scène avec Natacha Bounet, Elach'T et 1 Indien dans la ville : photos de spectacle par Calamithi."
 sous_titre: ""
 weight: 20
 aliases: ["/prince-des-poètes/"]

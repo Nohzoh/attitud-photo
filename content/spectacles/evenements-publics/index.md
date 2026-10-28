@@ -1,5 +1,6 @@
 ---
 title: "Événements publics"
+description: "Concerts, comédie musicale, salons d'art, galeries et conventions : reportages photo d'événements publics par Calamithi."
 sous_titre: ""
 weight: 60
 aliases: ["/evenements-publics/"]

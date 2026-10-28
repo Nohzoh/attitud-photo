@@ -1,9 +1,10 @@
 ---
 title: "Disparitions"
+description: "Disparitions, spectacle immersif : ateliers, répétitions, costumes et représentations de novembre 2023, photographiés par Calamithi."
 sous_titre: ""
 weight: 40
 aliases: ["/disparitions2/"]
-# Texte alternatif de chaque photo (facultatif, sinon « titre, photo N ») :
+# Texte alternatif de chaque photo (facultatif, sinon une description générique) :
 # legendes:
 #   01.jpg: "Description de la photo"
 couverture: "couverture.jpg"
