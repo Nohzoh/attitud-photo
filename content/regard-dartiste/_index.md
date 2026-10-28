@@ -15,7 +15,7 @@ cta_bouton: "Prendre rendez-vous"
 
 En mai 2026, j'ai exposé pour la première fois dans le cadre de l'événement municipal fontenaysien « Entrez, c'est ouvert ». Les œuvres sont imprimées sur toile et montées en caisse américaine, une façon de rapprocher encore davantage photographie et peinture.
 
-{{< illustration photo="livret.jpg" alt="Couverture du livret de l'exposition « Cartographie de l'instable » : le reflet d'un voilier ondulant dans l'eau" lien="https://calamithi.attitud.photo/" >}}
+{{< illustration photo="livret.jpg" alt="Couverture du livret de l'exposition « Cartographie de l'instable » : le reflet d'un voilier ondulant dans l'eau" lien="https://calamithi.attitud.photo/" video="livret.mp4" >}}
 ## Cartographie de l'instable
 
 Une promenade silencieuse entre lumière, matière et temps. Le [livret de l'exposition](https://calamithi.attitud.photo/) présente chaque œuvre avec son histoire ; certains tirages y sont disponibles à la commande, dans la limite des exemplaires de cette édition limitée.

@@ -1,6 +1,14 @@
 // Menu mobile et visionneuse plein écran des galeries. Aucune dépendance.
 document.documentElement.classList.remove('no-js');
 
+// Boucles vidéo muettes : lancées seulement si le visiteur n'a pas désactivé les animations.
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[data-boucle]').forEach((video) => {
+    video.preload = 'auto';
+    video.play().catch(() => {});
+  });
+}
+
 (function () {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.nav-toggle');

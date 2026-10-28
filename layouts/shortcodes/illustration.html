@@ -5,7 +5,9 @@
        ## Titre
        Texte en Markdown.
        {{< /illustration >}}
-     Avec lien="https://…", la photo mène à cette adresse au lieu de s'ouvrir dans la visionneuse. */}}
+     Avec lien="https://…", la photo mène à cette adresse au lieu de s'ouvrir dans la visionneuse.
+     Avec video="fichier.mp4" (une courte boucle muette), la vidéo remplace la photo, qui reste affichée
+     pendant le chargement, sans JavaScript et pour qui a désactivé les animations. */}}
 {{ $nom := .Get "photo" }}
 {{ $res := .Page.Resources.Get $nom }}
 {{ if not $res }}{{ errorf "illustration : photo %q introuvable à côté de %s" $nom .Page.File.Path }}{{ end }}
@@ -20,6 +22,15 @@
   <a class="gallery-item illustre-photo" href="{{ $full.RelPermalink }}" data-width="{{ $full.Width }}" data-height="{{ $full.Height }}"
     style="--ratio: {{ div (float $img.Width) $img.Height }}">
   {{ end }}
+    {{ with .Get "video" }}
+      {{ $video := $.Page.Resources.Get . }}
+      {{ if not $video }}{{ errorf "illustration : vidéo %q introuvable à côté de %s" . $.Page.File.Path }}{{ end }}
+      <video muted loop playsinline preload="none" data-boucle poster="{{ ($img.Process "resize 1200x webp").RelPermalink }}"
+        width="{{ $img.Width }}" height="{{ $img.Height }}" aria-label="{{ $.Get "alt" }}">
+        <source src="{{ $video.RelPermalink }}" type="video/mp4">
+      </video>
+    {{ else }}
     {{ partial "picture.html" (dict "img" $res "alt" (.Get "alt") "sizes" "(max-width: 760px) 100vw, 40vw") }}
+    {{ end }}
   </a>
 </section>
