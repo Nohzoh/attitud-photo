@@ -1,6 +1,6 @@
 ---
 title: "Damien Rodriguez"
-sous_titre: "Thème déambulations parisiennes"
+sous_titre: ""
 weight: 34
 aliases: ["/damien/"]
 # Texte alternatif de chaque photo (facultatif, sinon « titre, photo N ») :

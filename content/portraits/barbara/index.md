@@ -1,6 +1,6 @@
 ---
 title: "Barbara Lukumuena"
-sous_titre: "Thème Palais Royal"
+sous_titre: ""
 weight: 32
 aliases: ["/barbara/"]
 # Texte alternatif de chaque photo (facultatif, sinon « titre, photo N ») :
