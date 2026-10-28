@@ -21,7 +21,7 @@ offres:
 inclus:
   - "Sélection et traitement des photos"
   - "Galerie privée en ligne"
-notes_tarifs: "Ces formules sont des points de départ : chaque mariage est différent, parlons du vôtre. Frais de déplacement en supplément."
+notes_tarifs: "Ces formules sont des points de départ : chaque mariage est différent, parlons du vôtre. Déplacement offert jusqu'à 20 minutes de Fontenay-sous-Bois, puis forfait selon le temps de trajet. [Détail des frais de déplacement](../deplacements/)"
 cta_titre: "Vous préparez votre mariage ?"
 cta_bouton: "Parlons de votre mariage"
 ---

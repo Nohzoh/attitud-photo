@@ -2,7 +2,7 @@
 title: "Portraits & souvenirs"
 titre_seo: "Photographe portrait à Fontenay-sous-Bois"
 sous_titre: "Des images de vous et de ceux qui comptent."
-description: "Séances photo portrait seul, en duo ou en famille à Fontenay-sous-Bois et dans l'Est parisien, en extérieur ou à domicile. À partir de 180 €."
+description: "Séances photo portrait seul, en duo ou en famille au studio à Fontenay-sous-Bois, en extérieur ou à domicile dans l'Est parisien. À partir de 180 €."
 aliases: ["/portraits-souvenirs/"]
 weight: 10
 offres_titre: "Votre séance portrait"
@@ -10,7 +10,7 @@ offres:
   - titre: "Individuel"
     prix: "180 €"
     duree: "1 heure de prise de vue"
-    description: "Une séance rien que pour vous, en extérieur ou à domicile."
+    description: "Une séance rien que pour vous, au studio, en extérieur ou à domicile."
   - titre: "Duo"
     prix: "220 €"
     duree: "1 heure de prise de vue"
@@ -23,7 +23,7 @@ inclus:
   - "Sélection et traitement des images"
   - "Galerie privée en ligne"
   - "Photos en haute définition"
-notes_tarifs: "Frais de déplacement en supplément selon le lieu de la séance."
+notes_tarifs: "Au studio, pas de frais de déplacement. Ailleurs, déplacement offert jusqu'à 20 minutes de Fontenay-sous-Bois, puis forfait selon le temps de trajet. [Détail des frais de déplacement](../deplacements/)"
 cta_titre: "Envie d'une séance à votre image ?"
 cta_bouton: "Imaginer ma séance"
 ---

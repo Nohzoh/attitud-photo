@@ -11,6 +11,6 @@
   {{ with .form_url }}<a class="contact-card" href="{{ . }}" rel="noopener"><span class="contact-label">Formulaire</span>Décrire mon projet</a>{{ end }}
   <a class="contact-card" href="{{ .map_url }}" rel="noopener"><span class="contact-label">Adresse</span>{{ .address }}</a>
 </section>
-<p class="prose footer-muted">Zone d'intervention : {{ .area }}. Au-delà, des frais de déplacement s'appliquent.</p>
+<p class="prose footer-muted">Zone d'intervention : {{ .area }}. Séances au studio sans frais de déplacement ; ailleurs, déplacement offert jusqu'à 20 minutes, puis <a href="{{ relref $ "/deplacements" }}">forfait selon le temps de trajet</a>.</p>
 {{ end }}
 {{ end }}

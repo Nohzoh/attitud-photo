@@ -19,7 +19,7 @@ offres:
 inclus:
   - "Prise de vue"
   - "Sélection et traitement des photos"
-notes_tarifs: "Frais de déplacement en supplément. Pour un usage professionnel, institutionnel ou commercial des images, les conditions sont définies sur mesure."
+notes_tarifs: "Déplacement offert jusqu'à 20 minutes de Fontenay-sous-Bois, puis forfait selon le temps de trajet ([détail des frais de déplacement](../deplacements/)). Pour un usage professionnel, institutionnel ou commercial des images, les conditions sont définies sur mesure."
 cta_titre: "Un spectacle, un événement à photographier ?"
 cta_bouton: "Demander un devis"
 ---
