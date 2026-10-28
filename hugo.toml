@@ -15,6 +15,8 @@ disableKinds = ["taxonomy", "term", "rss"]
   copyright_owner = "Calamithi"
   copyright_year_start = 2024
   livret_url = "https://calamithi.attitud.photo/"
+  # Fourchette de prix indiquée à Google (données structurées de l'accueil) : à ajuster si les tarifs changent.
+  price_range = "À partir de 180 €"
 
 [params.contact]
   email = "calamithi@gmail.com"
