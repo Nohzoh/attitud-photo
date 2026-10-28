@@ -1,8 +1,8 @@
-{{/* Grille justifiée d'une liste de photos. Paramètres : page (pour le titre et les « legendes »), images.
+{{/* Grille justifiée d'une liste de photos. Paramètres : page (pour le titre et les « legendes »), images, class (facultatif).
      Chaque vignette ouvre la visionneuse plein écran (site.js) ; sans JavaScript, le lien ouvre l'image. */}}
 {{ $page := .page }}
 {{ $legendes := $page.Params.legendes | default dict }}
-<div class="gallery" data-gallery>
+<div class="gallery{{ with .class }} {{ . }}{{ end }}" data-gallery>
   {{ range $i, $res := .images }}
     {{ $img := $res | images.Filter images.AutoOrient }}
     {{ $alt := index $legendes $res.Name | default (printf "%s, photo %d" $page.Title (add $i 1)) }}

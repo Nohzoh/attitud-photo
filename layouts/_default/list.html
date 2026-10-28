@@ -11,11 +11,11 @@
 
 <div class="prose">{{ .Content }}</div>
 
-{{/* Les autres photos d'une rubrique (hors couverture) illustrent la page. */}}
+{{/* Les autres photos d'une rubrique (hors couverture) illustrent la page, en colonnes alignées sur les formules. */}}
 {{ with $cover }}
   {{ $autres := slice }}
   {{ range sort ($.Resources.ByType "image") "Name" }}{{ if ne .Name $cover.Name }}{{ $autres = $autres | append . }}{{ end }}{{ end }}
-  {{ with $autres }}<section class="section-block">{{ partial "gallery-grid.html" (dict "page" $ "images" .) }}</section>{{ end }}
+  {{ with $autres }}<section class="section-block">{{ partial "gallery-grid.html" (dict "page" $ "images" . "class" "gallery-colonnes") }}</section>{{ end }}
 {{ end }}
 
 {{ partial "offres.html" . }}
