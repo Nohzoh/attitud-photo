@@ -22,5 +22,5 @@
 {{ if .Params.galerie }}<section class="section-block">{{ partial "gallery.html" . }}</section>{{ end }}
 {{ partial "gallery-cards.html" . }}
 {{ partial "temoignages.html" (dict "rubrique" .Section "titre" "Ils en parlent") }}
-{{ partial "cta.html" (dict "titre" .Params.cta_titre "bouton" .Params.cta_bouton) }}
+{{ partial "cta.html" (dict "titre" .Params.cta_titre "texte" .Params.cta_texte "bouton" .Params.cta_bouton) }}
 {{ end }}

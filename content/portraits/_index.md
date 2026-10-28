@@ -24,7 +24,11 @@ inclus:
   - "Galerie privée en ligne"
   - "Photos en haute définition"
 notes_tarifs: "Au studio, pas de frais de déplacement. Ailleurs, déplacement offert jusqu'à 20 minutes de Fontenay-sous-Bois, puis forfait selon le temps de trajet. [Détail des frais de déplacement](../deplacements/)"
-cta_titre: "Envie d'une séance à votre image ?"
+cta_titre: "Une séance adaptée à vos envies"
+cta_texte: |
+  Vous souhaitez une séance plus courte, ou simplement quelques photos pour immortaliser un moment particulier ?
+  
+  Chaque projet est unique : si vous avez besoin de moins d'une heure de prise de vue ou d'un nombre de photos réduit, n'hésitez pas à me contacter. Nous imaginerons ensemble une formule sur mesure, adaptée à vos envies et à votre budget.
 cta_bouton: "Imaginer ma séance"
 ---
 

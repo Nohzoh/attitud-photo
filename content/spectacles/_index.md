@@ -20,7 +20,11 @@ inclus:
   - "Prise de vue"
   - "Sélection et traitement des photos"
 notes_tarifs: "Déplacement offert jusqu'à 20 minutes de Fontenay-sous-Bois, puis forfait selon le temps de trajet ; chaque trajet entre plusieurs lieux est compté ([détail des frais de déplacement](../deplacements/)). Pour un usage professionnel, institutionnel ou commercial des images, les conditions sont définies sur mesure."
-cta_titre: "Un spectacle, un événement à photographier ?"
+cta_titre: "Un reportage adapté à votre événement"
+cta_texte: |
+  Vous souhaitez une présence plus courte, ou simplement quelques photos pour garder une trace d'un moment particulier ?
+  
+  Chaque projet est unique : si vous avez besoin de moins d'une heure de présence ou d'un nombre de photos réduit, n'hésitez pas à me contacter. Nous imaginerons ensemble une formule sur mesure, adaptée à vos envies et à votre budget.
 cta_bouton: "Demander un devis"
 ---
 
