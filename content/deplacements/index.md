@@ -1,13 +1,13 @@
 ---
 title: "Frais de déplacement"
 sous_titre: "Au studio ou chez vous, selon votre projet."
-description: "Frais de déplacement d'ATTI-TUD Photo : séances au studio de Fontenay-sous-Bois sans frais, déplacement offert jusqu'à 20 minutes, puis forfait selon le temps de trajet."
+description: "Frais de déplacement d'ATTI-TUD Photo : séances au studio de Fontenay-sous-Bois (10 avenue Victor Hugo) sans frais, déplacement offert jusqu'à 20 minutes, puis forfait selon le temps de trajet."
 cta_titre: "Une question sur votre projet ?"
 ---
 
 ## Au studio : pas de frais
 
-Les séances photo au studio, à Fontenay-sous-Bois, n'entraînent pas de frais de déplacement.
+Les séances photo au studio, 10 avenue Victor Hugo à Fontenay-sous-Bois, n'entraînent pas de frais de déplacement.
 
 ## Ailleurs : un forfait selon le temps de trajet
 
@@ -22,3 +22,7 @@ Pour une prise de vue chez vous, en extérieur ou sur le lieu de votre événeme
 | Plus de 1 h 30 | Sur devis |
 
 Les forfaits comprennent le déplacement aller-retour et les frais de transport habituels.
+
+## Plusieurs lieux dans la journée
+
+Un mariage ou un événement se déroule parfois en plusieurs endroits : mairie, lieu de cérémonie, salle de réception… Chaque trajet supplémentaire entre ces lieux est compté selon la même grille. Nous faisons le point ensemble lors de la préparation, pour que le devis reflète votre programme.
