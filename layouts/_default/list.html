@@ -19,7 +19,6 @@
 {{ end }}
 
 {{ partial "offres.html" . }}
-{{ with .Params.notes_tarifs }}<div class="prose notes">{{ . | markdownify }}</div>{{ end }}
 {{ if .Params.galerie }}<section class="section-block">{{ partial "gallery.html" . }}</section>{{ end }}
 {{ partial "gallery-cards.html" . }}
 {{ partial "temoignages.html" (dict "rubrique" .Section "titre" "Ils en parlent") }}

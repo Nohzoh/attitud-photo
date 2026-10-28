@@ -92,7 +92,7 @@ a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden;
   /* Sur mobile, la photo suit toujours son paragraphe, comme sur l'ancien site. */
   .illustre:nth-of-type(odd) .illustre-photo { order: 0; }
 }
-.notes { font-size: .95rem; color: var(--muted); }
+.notes { max-width: 52rem; margin-top: 1rem; font-size: .95rem; color: var(--muted); }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; }
 .prose th, .prose td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--border); }
 .prose th { font-weight: 600; }

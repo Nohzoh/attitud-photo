@@ -17,5 +17,6 @@
       {{ range . }}<li>{{ . }}</li>{{ end }}
     </ul>
   {{ end }}
+  {{ with $.Params.notes_tarifs }}<div class="notes">{{ . | markdownify }}</div>{{ end }}
 </section>
 {{ end }}
