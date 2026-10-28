@@ -1,5 +1,6 @@
 ---
 title: "Accueil"
+titre_seo: "Calamithi, photographe à Fontenay-sous-Bois"
 description: "Calamithi, photographe à Fontenay-sous-Bois : portraits, mariages, spectacles et créations artistiques. Des images qui racontent."
 accroche: "Portraits, mariages, spectacles et créations, à Fontenay-sous-Bois et dans l'Est parisien."
 aliases: ["/accueil/"]
