@@ -4,6 +4,7 @@ titre_seo: "Photographe de mariage à Fontenay-sous-Bois et en Île-de-France"
 sous_titre: "Votre journée, telle qu'elle se vit."
 description: "Photographe de mariage discrète et spontanée en Île-de-France : trois formules de 2 à 10 heures de présence, à partir de 550 €."
 weight: 20
+vignette_accueil: "angelique/05.jpg"
 offres_titre: "Les formules"
 offres:
   - titre: "L'essentiel"

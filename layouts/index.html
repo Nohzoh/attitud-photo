@@ -39,6 +39,9 @@
       {{ with .Page }}{{ if and .IsSection (ne .Section "") }}
         <a class="card" href="{{ .RelPermalink }}">
           {{ $cover := partial "cover.html" . }}
+          {{/* « vignette_accueil » : une photo d'une sous-page (ex. "angelique/05.jpg") pour la carte de l'accueil seulement. */}}
+          {{ $rubrique := . }}
+          {{ with .Params.vignette_accueil }}{{ $fichier := path.Base . }}{{ with $rubrique.GetPage (path.Dir .) }}{{ with .Resources.Get $fichier }}{{ $cover = . }}{{ end }}{{ end }}{{ end }}
           {{ if not $cover }}{{ with .Pages }}{{ $cover = partial "cover.html" (index . 0) }}{{ end }}{{ end }}
           {{ with $cover }}
             {{ $thumb := (. | images.Filter images.AutoOrient).Fill "900x1125 Center webp" }}
