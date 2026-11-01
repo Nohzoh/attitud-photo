@@ -1,0 +1,42 @@
+{{/* Calculatrice de bon cadeau, réglée dans data/bon_cadeau.yaml et activée par « calculateur » dans le front matter.
+     Le calcul est fait par calculateur.js. */}}
+{{ if .Params.calculateur }}{{ with hugo.Data.bon_cadeau }}
+{{ $c := . }}
+<section class="section-block" id="composer">
+  <h2>{{ .titre }}</h2>
+  <form class="calc" data-calculateur data-tarifs="{{ $c | jsonify }}" data-contact="{{ relref $ "/contact" }}"{{ with $.Params.remise }} data-remise="{{ . }}"{{ end }}{{ with hugo.Data.stripe_liens }} data-liens="{{ . | jsonify }}"{{ end }}{{ with resources.Get "data/trajets.json" | fingerprint }} data-trajets="{{ .RelPermalink }}"{{ end }}>
+    <div class="calc-choix">
+      <fieldset>
+        <legend>Nombre de personnes</legend>
+        <div class="calc-pastilles">
+          {{ range $i, $p := .personnes }}
+            <label><input type="radio" name="personnes" value="{{ .label }}"{{ if eq $i 0 }} checked{{ end }}><span>{{ .label }}</span></label>
+          {{ end }}
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><label for="calc-ville">Ville de la séance</label></legend>
+        <div class="calc-ville">
+          <input id="calc-ville" type="text" autocomplete="off" placeholder="Ville ou code postal" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="calc-villes">
+          <ul id="calc-villes" class="calc-villes" role="listbox" hidden></ul>
+        </div>
+        <p class="calc-aide">Pour une séance au studio, choisissez Fontenay-sous-Bois.</p>
+      </fieldset>
+    </div>
+    <div class="calc-recap" aria-live="polite">
+      <p class="calc-total" data-total></p>
+      <ul data-lignes></ul>
+      <p class="calc-message" data-message hidden></p>
+      <p class="offer-action"><a class="button" href="#paiement" data-payer>Offrir ce bon</a></p>
+    </div>
+  </form>
+  <noscript><p>Pour composer votre bon cadeau, <a href="{{ relref $ "/contact" }}">écrivez-moi</a>.</p></noscript>
+  {{ with $c.inclus }}
+    <ul class="included">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  {{ end }}
+  {{ with $c.notes }}<div class="notes">{{ . | markdownify }}</div>{{ end }}
+</section>
+{{ with resources.Get "js/calculateur.js" | minify | fingerprint }}<script src="{{ .RelPermalink }}" defer></script>{{ end }}
+{{ end }}{{ end }}

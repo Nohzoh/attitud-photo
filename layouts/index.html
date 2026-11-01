@@ -12,6 +12,8 @@
   </div>
 </section>
 
+{{ partial "bandeau-cadeau.html" (dict "classe" "saison" "texte" "Envie d'offrir une séance ? Découvrir les bons cadeaux") }}
+
 <section class="intro prose">
   {{ .Content }}
   <p class="signature">{{ site.Params.author }}, photographe &amp; artiste</p>

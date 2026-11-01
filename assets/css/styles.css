@@ -62,6 +62,14 @@ main:focus { outline: none; }
 .hero-text h1 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.05; }
 .hero-text p { margin: .5rem 0 0; font-size: 1.1rem; }
 .intro { padding-top: 3rem; }
+/* Bandeau de saison sous la grande photo de l'accueil. */
+.saison { width: var(--page-width); margin: 1.25rem auto 0; text-align: center; }
+/* Bouton « pastille » discret, partagé par le bandeau de saison et le lien vers les bons cadeaux. */
+.saison a, .offer-gift a { display: inline-block; padding: .6rem 1.4rem; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); text-decoration: none; }
+.saison a:hover, .offer-gift a:hover { border-color: var(--text); }
+.saison:not([hidden]) ~ .intro { padding-top: 2rem; }
+/* Lien vers les bons cadeaux, sous les formules. */
+.offer-gift { margin-top: 1.25rem; }
 .signature { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--muted); }
 
 /* Pages */
@@ -70,7 +78,7 @@ main:focus { outline: none; }
 .lead { margin: .5rem 0 0; font-size: 1.2rem; color: var(--muted); }
 .back-link { display: inline-block; margin-bottom: .75rem; color: var(--muted); text-decoration: none; font-size: .95rem; }
 .page-cover { width: var(--page-width); margin: 0 auto 2rem; }
-.page-cover img { width: 100%; max-height: 70vh; object-fit: cover; border-radius: var(--radius); }
+.page-cover img { width: 100%; max-height: 70vh; object-fit: cover; object-position: var(--position, center); border-radius: var(--radius); }
 .prose { width: var(--text-width); margin: 0 auto; font-size: 1.08rem; }
 .prose h2 { font-family: var(--serif); font-weight: 500; font-size: 1.9rem; margin: 2.5rem 0 .5rem; }
 .prose h3 { margin: 1.75rem 0 .25rem; }
@@ -130,6 +138,38 @@ a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden;
 .offer-price { font-family: var(--serif); font-size: 2.2rem; margin: .25rem 0 0; line-height: 1.2; }
 .offer-duration { margin: 0 0 .75rem; color: var(--muted); }
 .offer p:last-child { margin-bottom: 0; }
+/* Formule achetable en ligne : le bouton s'aligne en bas de chaque carte. */
+.offer-achat { display: flex; flex-direction: column; }
+.offer-achat .offer-action { margin-top: auto; padding-top: 1rem; }
+.illustre-texte .button { margin-top: .5rem; }
+
+/* Calculatrice de bon cadeau */
+.calc { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 2rem; align-items: start; }
+.calc fieldset { border: 0; padding: 0; margin: 0 0 1.75rem; min-width: 0; }
+.calc legend { padding: 0; margin-bottom: .6rem; font-size: .85rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.calc-pastilles { display: flex; flex-wrap: wrap; gap: .5rem; }
+.calc-pastilles input { position: absolute; opacity: 0; }
+.calc-pastilles span { display: inline-block; padding: .5rem 1.2rem; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); cursor: pointer; }
+.calc-pastilles input:checked + span { background: var(--text); border-color: var(--text); color: var(--bg); }
+.calc-pastilles input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 2px; }
+.calc-aide { margin: .6rem 0 0; font-size: .92rem; color: var(--muted); }
+.calc-ville { position: relative; }
+.calc-ville input { width: 100%; padding: .65rem .9rem; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+.calc-villes { position: absolute; z-index: 5; left: 0; right: 0; margin: .25rem 0 0; padding: .25rem; list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+.calc-villes li { padding: .4rem .6rem; border-radius: 6px; cursor: pointer; }
+.calc-villes li:hover, .calc-villes li[aria-selected="true"] { background: var(--bg); }
+.calc-recap { position: sticky; top: 1.5rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.calc-total { margin: 0 0 .75rem; font-family: var(--serif); font-size: 2rem; line-height: 1.2; }
+.calc-recap ul { margin: 0 0 1rem; padding: 0; list-style: none; }
+.calc-recap li { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; }
+.calc-recap li span { flex: none; color: var(--muted); }
+.calc-message { margin: 0 0 1rem; color: var(--muted); }
+.calc-recap .offer-action { margin: 0; }
+.calc-inactif { opacity: .4; cursor: not-allowed; }
+@media (max-width: 760px) {
+  .calc { grid-template-columns: minmax(0, 1fr); }
+  .calc-recap { position: static; }
+}
 .included { margin: 1.25rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; color: var(--muted); }
 .included li::before { content: "✓ "; color: var(--text); }
 

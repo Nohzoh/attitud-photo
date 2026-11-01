@@ -38,6 +38,8 @@
           <ul>
             <li><a href="mailto:{{ .email }}">{{ .email }}</a></li>
             <li><a href="tel:{{ .phone_intl }}">{{ .phone }}</a></li>
+            {{ with site.GetPage "/offrir" }}<li><a href="{{ .RelPermalink }}">Offrir une séance</a></li>{{ end }}
+            {{ with site.GetPage "/offres" }}<li><a href="{{ .RelPermalink }}">Offres du moment</a></li>{{ end }}
             <li class="footer-muted">{{ .area }}</li>
           </ul>
           {{ end }}
@@ -50,7 +52,7 @@
           </ul>
         </div>
       </div>
-      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés. Les photographies de ce site sont protégées par le droit d'auteur : toute copie ou réutilisation sans autorisation écrite est interdite.{{ with site.GetPage "/droits-utilisation" }} · <a href="{{ .RelPermalink }}">Droits d'utilisation</a>{{ end }}{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}</p>
+      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés. Les photographies de ce site sont protégées par le droit d'auteur : toute copie ou réutilisation sans autorisation écrite est interdite.{{ with site.GetPage "/droits-utilisation" }} · <a href="{{ .RelPermalink }}">Droits d'utilisation</a>{{ end }}{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}{{ with site.GetPage "/cgv" }} · <a href="{{ .RelPermalink }}">Conditions de vente</a>{{ end }}</p>
     </footer>
 
     <dialog class="lightbox" data-lightbox aria-label="Visionneuse">

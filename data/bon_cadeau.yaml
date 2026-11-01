@@ -1,0 +1,21 @@
+# Calculatrice de bon cadeau, partagée par la page Offrir et les offres du moment.
+titre: "Composer le bon cadeau"
+duree: "1 heure"
+personnes:
+  - { label: "1", prix: 180, photos: 15 }
+  - { label: "2", prix: 220, photos: 20 }
+  - { label: "3 à 5", prix: 280, photos: 30 }
+# Marge en % ajoutée aux temps de trajet de assets/data/trajets.json, calculés sans trafic.
+marge_trajet: 30
+# Mêmes seuils que la page Frais de déplacement ; au-delà du dernier, sur devis.
+deplacement:
+  - { max: 20, prix: 0 }
+  - { max: 40, prix: 15 }
+  - { max: 60, prix: 25 }
+  - { max: 90, prix: 40 }
+inclus:
+  - "Paiement sécurisé en ligne"
+  - "Bon cadeau en PDF, envoyé sous 48 h"
+  - "Séance à réaliser dans les 12 mois"
+  - "La date et le lieu précis se fixent ensuite avec la photographe"
+notes: "[Conditions générales de vente](/cgv/) · [Frais de déplacement](/deplacements/)"
