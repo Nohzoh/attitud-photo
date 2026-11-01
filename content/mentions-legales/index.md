@@ -29,6 +29,11 @@ Les personnes photographiées ont donné leur accord à la publication de leurs 
 
 ## Données personnelles et cookies
 
-Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les seules données personnelles traitées sont celles que vous envoyez par e-mail, par téléphone ou par le formulaire de contact (hébergé par Google Forms), utilisées uniquement pour vous répondre.
+Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les seules données personnelles traitées sont :
 
-Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et d'effacement de vos données. Pour l'exercer, écrivez à [calamithi@gmail.com](mailto:calamithi@gmail.com). Vous pouvez aussi adresser une réclamation à la [CNIL](https://www.cnil.fr).
+- celles que vous envoyez par e-mail, par téléphone ou par le formulaire de contact (hébergé par Google Forms), utilisées uniquement pour vous répondre ;
+- les données de commande des bons cadeaux (nom, e-mail, ville de la séance, informations de paiement), collectées et traitées par Stripe et, le cas échéant, par le service de paiement choisi (PayPal…) lors du paiement, puis utilisées pour envoyer le bon et organiser la séance. Les coordonnées bancaires ne sont jamais transmises à l'éditeur du site.
+
+Les données de commande sont conservées le temps nécessaire au suivi de la commande et aux obligations comptables et légales. Elles ne sont ni vendues ni cédées à des tiers.
+
+Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de limitation du traitement de vos données. Pour l'exercer, écrivez à [calamithi@gmail.com](mailto:calamithi@gmail.com). Vous pouvez aussi adresser une réclamation à la [CNIL](https://www.cnil.fr).

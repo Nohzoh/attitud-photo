@@ -18,15 +18,17 @@ offres:
     photos: "20 photos"
     description: "À deux, tout simplement : des images ensemble et quelques portraits individuels."
   - titre: "Groupe"
-    prix: "260 €"
+    prix: "280 €"
     duree: "1 heure de prise de vue"
-    photos: "25 photos"
-    description: "Pour 3 personnes, puis 20 € et 5 photos de plus par personne supplémentaire."
+    photos: "30 photos"
+    description: "De 3 à 5 personnes : en famille ou entre amis."
 inclus:
   - "Sélection et traitement des images"
   - "Galerie privée en ligne"
   - "Photos en haute définition"
 notes_tarifs: "Au studio, pas de frais de déplacement. Ailleurs, déplacement offert jusqu'à 20 minutes de Fontenay-sous-Bois, puis forfait selon le temps de trajet. [Détail des frais de déplacement](../deplacements/)"
+# Lien vers la page « Offrir une séance » sous les formules.
+lien_cadeau: true
 cta_titre: "Une séance adaptée à vos envies"
 cta_texte: |
   Vous souhaitez une séance plus courte, ou simplement quelques photos pour immortaliser un moment particulier ?

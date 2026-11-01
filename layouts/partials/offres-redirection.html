@@ -1,0 +1,34 @@
+{{/* Offres du moment : leurs dates viennent de hugo.toml (params.saisons), à la date du visiteur.
+     Une offre terminée renvoie vers une offre en cours, sinon vers la page Offrir.
+     La page Offres du moment ne garde que les offres en cours. « ?apercu » désactive tout, pour relire une offre. */}}
+{{ if eq .Section "offres" }}
+  {{ $offres := slice }}
+  {{ range site.Params.saisons }}
+    {{ $saison := . }}
+    {{ with site.GetPage .lien }}{{ if and (eq .Section "offres") (ne .Path "/offres") }}
+      {{ $offres = $offres | append (dict "debut" $saison.debut "fin" $saison.fin "url" .RelPermalink) }}
+    {{ end }}{{ end }}
+  {{ end }}
+  <script>
+    (function () {
+      if (new URLSearchParams(location.search).has('apercu')) return;
+      const offres = {{ $offres }};
+      const offrir = {{ (site.GetPage "/offrir").RelPermalink }};
+      const date = new Date();
+      const jour = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+      const enCours = offres.filter((offre) => jour >= offre.debut && jour <= offre.fin);
+      {{ if eq .Path "/offres" }}
+      if (!enCours.length) location.replace(offrir);
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.card').forEach((carte) => {
+          if (!enCours.some((offre) => offre.url === carte.getAttribute('href'))) carte.remove();
+        });
+      });
+      {{ else }}
+      if (!enCours.some((offre) => offre.url === location.pathname)) {
+        location.replace(enCours.length ? enCours[0].url : offrir);
+      }
+      {{ end }}
+    })();
+  </script>
+{{ end }}

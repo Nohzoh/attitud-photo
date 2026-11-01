@@ -4,13 +4,14 @@
   <h2>{{ $.Params.offres_titre | default "Formules" }}</h2>
   <div class="offers">
     {{ range . }}
-      <article class="offer">
+      <article class="offer{{ if .lien }} offer-achat{{ end }}">
         <h3>{{ .titre }}</h3>
         <p class="offer-price">{{ .prix }}</p>
         {{ if or .duree .photos }}
           <p class="offer-duration">{{ .duree }}{{ if and .duree .photos }}<br>{{ end }}{{ .photos }}</p>
         {{ end }}
         {{ with .description }}<p>{{ . }}</p>{{ end }}
+        {{ with .lien }}<p class="offer-action"><a class="button" href="{{ . }}">{{ $.Params.offres_bouton | default "Réserver" }}</a></p>{{ end }}
       </article>
     {{ end }}
   </div>
@@ -20,5 +21,6 @@
     </ul>
   {{ end }}
   {{ with $.Params.notes_tarifs }}<div class="notes">{{ . | markdownify }}</div>{{ end }}
+  {{ if $.Params.lien_cadeau }}{{ partial "bandeau-cadeau.html" (dict "classe" "offer-gift" "texte" "Envie d'offrir cette séance ? Découvrir les bons cadeaux") }}{{ end }}
 </section>
 {{ end }}

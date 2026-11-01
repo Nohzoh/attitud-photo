@@ -1,7 +1,7 @@
 {{/* Cartes vers les galeries (pages filles) d'une rubrique. */}}
 {{ with .Pages }}
 <section class="section-block">
-  <h2>Galeries</h2>
+  <h2>{{ $.Params.cartes_titre | default "Galeries" }}</h2>
   <div class="cards">
     {{ range . }}
       <a class="card" href="{{ .RelPermalink }}">

@@ -6,7 +6,7 @@
 
 {{ $cover := and (not .Params.galerie) (partial "cover.html" .) }}
 {{ with $cover }}
-<div class="page-cover">{{ partial "picture.html" (dict "img" . "alt" "" "eager" true) }}</div>
+<div class="page-cover"{{ with $.Params.couverture_position }} style="--position: {{ . | safeCSS }}"{{ end }}>{{ partial "picture.html" (dict "img" . "alt" "" "eager" true) }}</div>
 {{ end }}
 
 <div class="prose">{{ .Content }}</div>
@@ -14,10 +14,11 @@
 {{/* Les autres photos d'une rubrique (hors couverture) illustrent la page, en colonnes alignées sur les formules. */}}
 {{ with $cover }}
   {{ $autres := slice }}
-  {{ range sort ($.Resources.ByType "image") "Name" }}{{ if ne .Name $cover.Name }}{{ $autres = $autres | append . }}{{ end }}{{ end }}
+  {{ range sort ($.Resources.ByType "image") "Name" }}{{ if and (ne .Name $cover.Name) (not (in ($.Params.hors_galerie | default slice) .Name)) }}{{ $autres = $autres | append . }}{{ end }}{{ end }}
   {{ with $autres }}<section class="section-block">{{ partial "gallery-grid.html" (dict "page" $ "images" . "class" "gallery-colonnes") }}</section>{{ end }}
 {{ end }}
 
+{{ partial "calculateur.html" . }}
 {{ partial "offres.html" . }}
 {{ if .Params.galerie }}<section class="section-block">{{ partial "gallery.html" . }}</section>{{ end }}
 {{ partial "gallery-cards.html" . }}

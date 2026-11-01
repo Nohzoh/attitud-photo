@@ -7,6 +7,7 @@
 {{ if and (not $share) .IsHome }}{{ with site.GetPage "/selection" }}{{ $share = partial "cover.html" . }}{{ end }}{{ end }}
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
+{{ if .Params.noindex }}<meta name="robots" content="noindex">{{ end }}
 <meta name="author" content="{{ site.Params.author }}">
 <meta name="copyright" content="© {{ site.Params.copyright_owner }}, tous droits réservés">
 {{ with resources.Get "css/styles.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
@@ -29,3 +30,4 @@
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
 {{ if .IsHome }}{{ partial "jsonld.html" (dict "image" $share) }}{{ end }}
+{{ partial "offres-redirection.html" . }}

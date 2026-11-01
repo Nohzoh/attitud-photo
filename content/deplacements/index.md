@@ -11,7 +11,7 @@ Les séances photo au studio, 10 avenue Victor Hugo à Fontenay-sous-Bois, n'ent
 
 ## Ailleurs : un forfait selon le temps de trajet
 
-Pour une prise de vue chez vous, en extérieur ou sur le lieu de votre événement, les frais de déplacement sont calculés au départ de Fontenay-sous-Bois (94120), selon le temps de trajet aller simple estimé avec le moyen de transport retenu pour la prestation.
+Pour une prise de vue chez vous, en extérieur ou sur le lieu de votre événement, les frais de déplacement sont calculés au départ de Fontenay-sous-Bois (94120), selon le temps de trajet aller simple estimé en voiture, avec une marge pour tenir compte de la circulation.
 
 | Temps de trajet (aller simple) | Forfait |
 | --- | --- |

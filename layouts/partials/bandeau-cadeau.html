@@ -1,0 +1,25 @@
+{{/* Bouton vers les bons cadeaux, remplacé par le bandeau de la saison en cours (hugo.toml : params.saisons).
+     Tous sont dans la page, masqués ; le script montre celui du jour, à la date du visiteur.
+     Hors saison, ou sans JavaScript, reste le bouton. Paramètres : classe, texte. */}}
+{{ $classe := .classe }}
+{{ range site.Params.saisons }}
+  {{ $saison := . }}
+  {{ with site.GetPage .lien }}
+    <p class="{{ $classe }}" data-debut="{{ $saison.debut }}" data-fin="{{ $saison.fin }}" hidden><a href="{{ .RelPermalink }}">{{ $saison.texte }} <span aria-hidden="true">→</span></a></p>
+  {{ end }}
+{{ end }}
+{{ with site.GetPage "/offrir" }}
+  <p class="{{ $classe }}" data-saison-defaut><a href="{{ .RelPermalink }}">{{ $.texte }} <span aria-hidden="true">→</span></a></p>
+{{ end }}
+<script>
+  (function () {
+    const date = new Date();
+    const jour = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+    let enSaison = false;
+    document.querySelectorAll('[data-debut]').forEach((saison) => {
+      saison.hidden = jour < saison.dataset.debut || jour > saison.dataset.fin;
+      enSaison = enSaison || !saison.hidden;
+    });
+    document.querySelector('[data-saison-defaut]').hidden = enSaison;
+  })();
+</script>

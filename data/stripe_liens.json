@@ -1,0 +1,43 @@
+{
+  "normal": {
+    "1": {
+      "0": "https://buy.stripe.com/dRmeVf9R79521jf3bK5Rm0w",
+      "15": "https://buy.stripe.com/5kQfZj0gxepme61dQo5Rm0x",
+      "25": "https://buy.stripe.com/cNi28t3sJftq7HD6nW5Rm0y",
+      "40": "https://buy.stripe.com/28EdRb6EV1CA0fb8w45Rm0z"
+    },
+    "2": {
+      "0": "https://buy.stripe.com/00w4gBfbr2GEaTPh2A5Rm0E",
+      "15": "https://buy.stripe.com/eVq28t6EV2GE2njdQo5Rm0F",
+      "25": "https://buy.stripe.com/fZu7sN3sJ2GE5zv13C5Rm0G",
+      "40": "https://buy.stripe.com/4gM4gB9R73KIge97s05Rm0H"
+    },
+    "3 à 5": {
+      "0": "https://buy.stripe.com/dRmcN74wNftqge9cMk5Rm0M",
+      "15": "https://buy.stripe.com/dRmaEZfbrgxu8LHbIg5Rm0N",
+      "25": "https://buy.stripe.com/fZuaEZe7nbda5zv13C5Rm0O",
+      "40": "https://buy.stripe.com/9B64gBgfv2GEbXT9A85Rm0P"
+    }
+  },
+  "remise": {
+    "1": {
+      "0": "https://buy.stripe.com/00weVfaVbftqge96nW5Rm0A",
+      "15": "https://buy.stripe.com/4gM5kF7IZgxu1jfeUs5Rm0B",
+      "25": "https://buy.stripe.com/dRm9AVaVb1CA6Dz3bK5Rm0C",
+      "40": "https://buy.stripe.com/3cI14p4wNbda3rndQo5Rm0D"
+    },
+    "2": {
+      "0": "https://buy.stripe.com/6oU14paVb3KI3rn13C5Rm0I",
+      "15": "https://buy.stripe.com/7sY14p5ARa966Dz27G5Rm0J",
+      "25": "https://buy.stripe.com/9B6fZj7IZchefa5dQo5Rm0K",
+      "40": "https://buy.stripe.com/fZucN7bZf2GE4vraEc5Rm0L"
+    },
+    "3 à 5": {
+      "0": "https://buy.stripe.com/eVq4gB0gx1CAd1X5jS5Rm0Q",
+      "15": "https://buy.stripe.com/6oU7sNaVb2GEge9bIg5Rm0R",
+      "25": "https://buy.stripe.com/28E5kF0gx5SQ2njdQo5Rm0S",
+      "40": "https://buy.stripe.com/00w14pe7n5SQ6Dz8w45Rm0T"
+    }
+  },
+  "mode": "réel"
+}

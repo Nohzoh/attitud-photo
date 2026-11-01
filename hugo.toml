@@ -18,6 +18,30 @@ disableKinds = ["taxonomy", "term", "rss"]
   # Fourchette de prix indiquée à Google (données structurées de l'accueil) : à ajuster si les tarifs changent.
   price_range = "À partir de 180 €"
 
+# Bandeaux de saison sur l'accueil, affichés chaque année entre deux dates (mois-jour).
+# Le choix se fait dans le navigateur, à la date du visiteur.
+# Une page de content/offres doit avoir ici son entrée : ces dates décident aussi quand elle est visible.
+[[params.saisons]]
+  debut = "10-15"
+  fin = "10-31"
+  texte = "Halloween : séance à thème avec 10 % de remise."
+  lien = "/offres/halloween"
+[[params.saisons]]
+  debut = "11-15"
+  fin = "12-22"
+  texte = "Noël : 10 % de remise sur votre bon cadeau."
+  lien = "/offres/noel"
+[[params.saisons]]
+  debut = "01-15"
+  fin = "02-12"
+  texte = "Saint-Valentin : offrez une séance photo en duo."
+  lien = "/offrir"
+[[params.saisons]]
+  debut = "05-01"
+  fin = "05-28"
+  texte = "Fête des mères : offrez une séance photo."
+  lien = "/offrir"
+
 [params.contact]
   email = "calamithi@gmail.com"
   phone = "06 07 47 27 65"
