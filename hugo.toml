@@ -22,6 +22,22 @@ disableKinds = ["taxonomy", "term", "rss"]
 # Le choix se fait dans le navigateur, à la date du visiteur.
 # Une page de content/offres doit avoir ici son entrée : ces dates décident aussi quand elle est visible.
 [[params.saisons]]
+  debut = "01-15"
+  fin = "02-12"
+  texte = "Saint-Valentin : 10 % de remise sur une séance en duo."
+  lien = "/offres/saint-valentin"
+# Pâques change de date chaque année : « paques-28 » = 28 jours avant le dimanche de Pâques, calculé à la date du visiteur.
+[[params.saisons]]
+  debut = "paques-28"
+  fin = "paques+1"
+  texte = "Pâques : 10 % de remise sur une séance de printemps."
+  lien = "/offres/paques"
+[[params.saisons]]
+  debut = "05-01"
+  fin = "05-28"
+  texte = "Fête des mères : offrez une séance photo."
+  lien = "/offrir"
+[[params.saisons]]
   debut = "10-15"
   fin = "10-31"
   texte = "Halloween : séance à thème avec 10 % de remise."
@@ -31,16 +47,6 @@ disableKinds = ["taxonomy", "term", "rss"]
   fin = "12-22"
   texte = "Noël : 10 % de remise sur votre bon cadeau."
   lien = "/offres/noel"
-[[params.saisons]]
-  debut = "01-15"
-  fin = "02-12"
-  texte = "Saint-Valentin : offrez une séance photo en duo."
-  lien = "/offrir"
-[[params.saisons]]
-  debut = "05-01"
-  fin = "05-28"
-  texte = "Fête des mères : offrez une séance photo."
-  lien = "/offrir"
 
 [params.contact]
   email = "calamithi@gmail.com"

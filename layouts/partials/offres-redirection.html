@@ -14,9 +14,7 @@
       if (new URLSearchParams(location.search).has('apercu')) return;
       const offres = {{ $offres }};
       const offrir = {{ (site.GetPage "/offrir").RelPermalink }};
-      const date = new Date();
-      const jour = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
-      const enCours = offres.filter((offre) => jour >= offre.debut && jour <= offre.fin);
+      const enCours = offres.filter((offre) => window.saisonEnCours(offre.debut, offre.fin));
       {{ if eq .Path "/offres" }}
       if (!enCours.length) location.replace(offrir);
       document.addEventListener('DOMContentLoaded', () => {
