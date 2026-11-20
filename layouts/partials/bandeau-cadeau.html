@@ -13,11 +13,9 @@
 {{ end }}
 <script>
   (function () {
-    const date = new Date();
-    const jour = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
     let enSaison = false;
     document.querySelectorAll('[data-debut]').forEach((saison) => {
-      saison.hidden = jour < saison.dataset.debut || jour > saison.dataset.fin;
+      saison.hidden = !window.saisonEnCours(saison.dataset.debut, saison.dataset.fin);
       enSaison = enSaison || !saison.hidden;
     });
     document.querySelector('[data-saison-defaut]').hidden = enSaison;

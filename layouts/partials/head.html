@@ -30,4 +30,5 @@
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
 {{ if .IsHome }}{{ partial "jsonld.html" (dict "image" $share) }}{{ end }}
+{{ partial "saisons-script.html" . }}
 {{ partial "offres-redirection.html" . }}
