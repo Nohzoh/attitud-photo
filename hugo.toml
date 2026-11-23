@@ -15,6 +15,8 @@ disableKinds = ["taxonomy", "term", "rss"]
   copyright_owner = "Calamithi"
   copyright_year_start = 2024
   livret_url = "https://calamithi.attitud.photo/"
+  # Mesure d'audience Google Analytics : chargée seulement après accord du visiteur (bandeau), et seulement sur le site en ligne.
+  analytics_id = "G-YL47TX3PSR"
   # Fourchette de prix indiquée à Google (données structurées de l'accueil) : à ajuster si les tarifs changent.
   price_range = "À partir de 180 €"
 
