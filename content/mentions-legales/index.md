@@ -29,7 +29,9 @@ Les personnes photographiées ont donné leur accord à la publication de leurs 
 
 ## Données personnelles et cookies
 
-Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les seules données personnelles traitées sont :
+Ce site mesure son audience avec Google Analytics (Google Ireland Limited), **uniquement si vous l'acceptez** dans le bandeau affiché lors de votre première visite. Sans votre accord, aucun cookie n'est déposé et rien n'est envoyé à Google. Si vous acceptez, Google Analytics dépose des cookies (`_ga`) pour 13 mois au plus et reçoit les pages consultées, la provenance de la visite, le type d'appareil et une adresse IP tronquée. Ces données servent uniquement à des statistiques de fréquentation et peuvent être traitées par Google aux États-Unis, dans le cadre du Data Privacy Framework. Votre choix est gardé 6 mois dans votre navigateur. Vous pouvez en changer à tout moment avec le lien « Cookies » en bas de chaque page.
+
+Les autres données personnelles traitées sont :
 
 - celles que vous envoyez par e-mail, par téléphone ou par le formulaire de contact (hébergé par Google Forms), utilisées uniquement pour vous répondre ;
 - les données de commande des bons cadeaux (nom, e-mail, ville de la séance, informations de paiement), collectées et traitées par Stripe et, le cas échéant, par le service de paiement choisi (PayPal…) lors du paiement, puis utilisées pour envoyer le bon et organiser la séance. Les coordonnées bancaires ne sont jamais transmises à l'éditeur du site.

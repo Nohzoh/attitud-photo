@@ -224,3 +224,19 @@ a.illustre-photo { display: block; aspect-ratio: var(--ratio); overflow: hidden;
   .hero-image { height: 72vh; }
   .hero-text { padding: 1.25rem; }
 }
+
+/* Bandeau de consentement aux cookies (partial mesure-audience) : discret, Refuser et Accepter à égalité. */
+.cookies {
+  position: fixed; z-index: 20; left: 50%; bottom: 1rem; transform: translateX(-50%);
+  width: min(640px, 100% - 2rem); padding: 1rem 1.25rem; background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 8px 30px rgba(30, 26, 22, .12);
+  display: flex; align-items: center; gap: .75rem 1.25rem; flex-wrap: wrap; font-size: .92rem; line-height: 1.5;
+}
+.cookies p { margin: 0; flex: 1 1 260px; }
+.cookies-boutons { display: flex; gap: .5rem; }
+.cookies-boutons button {
+  font: inherit; cursor: pointer; padding: .55rem 1.2rem; border-radius: 999px;
+  border: 1px solid var(--text); background: var(--text); color: var(--bg);
+}
+.cookies-boutons button:hover { opacity: .85; }
+.lien-cookies { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }

@@ -1,0 +1,65 @@
+{{/* Google Analytics (hugo.toml : params.analytics_id), seulement si le visiteur accepte, comme l'exige la CNIL.
+     Le choix est gardé 6 mois dans le navigateur ; le lien « Cookies » du pied de page permet d'en changer.
+     Le script n'est chargé que sur le site en ligne (hugo build), jamais avec hugo server. */}}
+{{ with site.Params.analytics_id }}
+<div class="cookies" data-cookies hidden role="region" aria-label="Cookies">
+  <p>Ce site utilise Google Analytics pour compter les visites, uniquement si vous l'acceptez.{{ with site.GetPage "/mentions-legales" }} <a href="{{ .RelPermalink }}#données-personnelles-et-cookies">En savoir plus</a>{{ end }}</p>
+  <div class="cookies-boutons">
+    <button type="button" data-cookies-reponse="non">Refuser</button>
+    <button type="button" data-cookies-reponse="oui">Accepter</button>
+  </div>
+</div>
+<script>
+  (function () {
+    const id = {{ . }};
+    const charger = {{ hugo.IsProduction }};
+    const cle = 'consentement-mesure';
+    const duree = 182 * 24 * 3600 * 1000;
+    const bandeau = document.querySelector('[data-cookies]');
+    const lire = () => {
+      try {
+        const choix = JSON.parse(localStorage.getItem(cle));
+        return choix && Date.now() - choix.date < duree ? choix.reponse : null;
+      } catch (e) { return null; }
+    };
+    let charge = false;
+    const lancer = () => {
+      if (charge || !charger) return;
+      charge = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      // Cookies limités à 13 mois, comme le recommande la CNIL.
+      gtag('config', id, { cookie_expires: 13 * 30 * 24 * 3600 });
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+      document.head.appendChild(script);
+    };
+    const effacer = () => {
+      document.cookie.split(';').map((c) => c.trim().split('=')[0]).filter((nom) => nom.startsWith('_ga')).forEach((nom) => {
+        const domaine = location.hostname.replace(/^www\./, '');
+        ['', '; domain=' + location.hostname, '; domain=.' + domaine].forEach((d) => {
+          document.cookie = nom + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+        });
+      });
+    };
+    bandeau.querySelectorAll('[data-cookies-reponse]').forEach((bouton) => {
+      bouton.addEventListener('click', () => {
+        const reponse = bouton.dataset.cookiesReponse;
+        try { localStorage.setItem(cle, JSON.stringify({ reponse, date: Date.now() })); } catch (e) {}
+        bandeau.hidden = true;
+        if (reponse === 'oui') lancer();
+        else if (charge) { effacer(); location.reload(); }
+        else effacer();
+      });
+    });
+    document.querySelectorAll('[data-cookies-choix]').forEach((lien) => {
+      lien.addEventListener('click', () => { bandeau.hidden = false; bandeau.querySelector('button').focus(); });
+    });
+    const choix = lire();
+    if (choix === 'oui') lancer();
+    else if (choix === null) bandeau.hidden = false;
+  })();
+</script>
+{{ end }}

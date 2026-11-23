@@ -52,7 +52,7 @@
           </ul>
         </div>
       </div>
-      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés. Les photographies de ce site sont protégées par le droit d'auteur : toute copie ou réutilisation sans autorisation écrite est interdite.{{ with site.GetPage "/droits-utilisation" }} · <a href="{{ .RelPermalink }}">Droits d'utilisation</a>{{ end }}{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}{{ with site.GetPage "/cgv" }} · <a href="{{ .RelPermalink }}">Conditions de vente</a>{{ end }}</p>
+      <p class="footer-legal">© {{ site.Params.copyright_year_start }}–{{ now.Year }} {{ site.Params.copyright_owner }} · Tous droits réservés. Les photographies de ce site sont protégées par le droit d'auteur : toute copie ou réutilisation sans autorisation écrite est interdite.{{ with site.GetPage "/droits-utilisation" }} · <a href="{{ .RelPermalink }}">Droits d'utilisation</a>{{ end }}{{ with site.GetPage "/mentions-legales" }} · <a href="{{ .RelPermalink }}">Mentions légales</a>{{ end }}{{ with site.GetPage "/cgv" }} · <a href="{{ .RelPermalink }}">Conditions de vente</a>{{ end }}{{ if site.Params.analytics_id }} · <button type="button" class="lien-cookies" data-cookies-choix>Cookies</button>{{ end }}</p>
     </footer>
 
     <dialog class="lightbox" data-lightbox aria-label="Visionneuse">
@@ -62,6 +62,7 @@
       <button type="button" class="lightbox-prev" data-prev aria-label="Photo précédente">‹</button>
       <button type="button" class="lightbox-next" data-next aria-label="Photo suivante">›</button>
     </dialog>
+    {{ partial "mesure-audience.html" . }}
     {{ with resources.Get "js/site.js" | minify | fingerprint }}<script src="{{ .RelPermalink }}" defer></script>{{ end }}
   </body>
 </html>
